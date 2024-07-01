@@ -1,0 +1,21 @@
+project:
+  type: website
+  output-dir: ./docs	# new html pages will be stored here
+
+website:
+  title: "Sungyeon Hong"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - fun.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

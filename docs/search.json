@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "fun.html",
+    "href": "fun.html",
+    "title": "Fun Stuff",
+    "section": "",
+    "text": "This is a page for fun stuff!"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "This is a website for Sungyeon.\n\\[\n\\frac{dX}{dt} = rN(1-N)\n\\]"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Hi everyone, 안녕하세요!"
+  }
+]

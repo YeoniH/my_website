@@ -1,0 +1,9 @@
+---
+title: "Home"
+---
+
+This is a website for Sungyeon.
+
+$$
+\frac{dX}{dt} = rN(1-N)
+$$
