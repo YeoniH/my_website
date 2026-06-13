@@ -1,1 +1,13 @@
-/* css styles */
+/* Activity listing polish */
+.quarto-grid-item {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.quarto-grid-item .card-title {
+  line-height: 1.25;
+}
+
+.quarto-grid-item .card-text {
+  font-size: 0.95rem;
+}

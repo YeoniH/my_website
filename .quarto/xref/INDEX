@@ -7,5 +7,47 @@
   },
   "fun.qmd": {
     "fun.html": "740ccd2a"
+  },
+  "research/geometry-driven-hyperuniformity.qmd": {
+    "geometry-driven-hyperuniformity.html": "0ab1276d"
+  },
+  "research/supervision.qmd": {
+    "supervision.html": "da94fb32"
+  },
+  "research/topological-analysis-information-flow.qmd": {
+    "topological-analysis-information-flow.html": "6790f947"
+  },
+  "activities/future/example-future-event.qmd": {
+    "example-future-event.html": "38da82bc"
+  },
+  "activities/past/example-past-event.qmd": {
+    "example-past-event.html": "7a741782"
+  },
+  "education.qmd": {
+    "education.html": "f56aeb95"
+  },
+  "publications.qmd": {
+    "publications.html": "aa52496e"
+  },
+  "engagements.qmd": {
+    "engagements.html": "f1629ec5"
+  },
+  "interactive_lloyd/lloyd_demo.qmd": {
+    "lloyd_demo.html": "940dbfbb"
+  },
+  "research.qmd": {
+    "research.html": "ed249d75"
+  },
+  "engagements/future/example-future-event.qmd": {
+    "example-future-event.html": "776c604b"
+  },
+  "engagements/past/example-past-event.qmd": {
+    "example-past-event.html": "e6b57d10"
+  },
+  "contact.qmd": {
+    "contact.html": "fc8bbbab"
+  },
+  "interactive_lloyd/index.qmd": {
+    "index.html": "c292035a"
   }
 }

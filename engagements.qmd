@@ -1,0 +1,30 @@
+---
+title: "Engagements"
+listing:
+  - id: future-activities
+    contents: engagements/future/*.qmd
+    type: grid
+    categories: true
+    sort: "date asc"
+    fields: [image, date, title, description, categories]
+    page-size: 12
+  - id: past-activities
+    contents: engagements/past/*.qmd
+    type: grid
+    categories: true
+    sort: "date desc"
+    fields: [image, date, title, description, categories]
+    page-size: 12
+---
+
+This page collects talks, workshops, panels, podcasts, public programs, and other events I have participated in or will participate in.
+
+## Future activities
+
+::: {#future-activities}
+:::
+
+## Past activities
+
+::: {#past-activities}
+:::

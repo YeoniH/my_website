@@ -1,0 +1,16 @@
+---
+title: "Example future event"
+date: "2026-09-01"
+description: "A short description of the future event, talk, workshop, or public activity."
+categories: [Talk, Cybernetics]
+image: ../../images/activity-placeholder.png
+---
+
+Add the full event details here.
+
+## Details
+
+- **Role:** Speaker / panellist / facilitator
+- **Host:** Organisation name
+- **Location:** City or online
+- **Links:** Slides, recording, event page

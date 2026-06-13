@@ -1,0 +1,11 @@
+---
+title: "Research"
+---
+
+This page provides an overview of my research interests.
+
+## Research areas
+
+- [Geometry-driven hyperuniformity](research/geometry-driven-hyperuniformity.qmd)
+- [Topological analysis for information flow](research/topological-analysis-information-flow.qmd)
+- [Supervision](research/supervision.qmd)

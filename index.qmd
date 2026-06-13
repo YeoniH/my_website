@@ -2,8 +2,12 @@
 title: "Home"
 ---
 
-This is a website for Sungyeon.
+Transdisciplinary researcher and educator.
 
-$$
-\frac{dX}{dt} = rN(1-N)
-$$
+My work sits at the intersection of:
+
+- Cybernetics & Complexity
+- Human × AI
+- Topological Data Analysis
+
+I am interested in how patterns, behaviours, and meaning emerge in complex systems, and in developing conceptual and practical tools that help people navigate technological futures with clarity and care.

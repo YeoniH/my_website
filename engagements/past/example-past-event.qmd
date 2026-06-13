@@ -1,0 +1,16 @@
+---
+title: "Example past event"
+date: "2025-11-15"
+description: "A short description of the past event, talk, workshop, or public activity."
+categories: [Workshop, AI]
+image: ../../images/activity-placeholder.png
+---
+
+Add the full event details here.
+
+## Details
+
+- **Role:** Speaker / panellist / facilitator
+- **Host:** Organisation name
+- **Location:** City or online
+- **Links:** Slides, recording, event page

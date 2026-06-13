@@ -1,23 +1,121 @@
 [
   {
-    "objectID": "fun.html",
-    "href": "fun.html",
-    "title": "Fun Stuff",
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
     "section": "",
-    "text": "This is a page for fun stuff!"
+    "text": "This page will provide contact details and links."
+  },
+  {
+    "objectID": "engagements/future/example-future-event.html",
+    "href": "engagements/future/example-future-event.html",
+    "title": "Example future event",
+    "section": "",
+    "text": "Add the full event details here."
+  },
+  {
+    "objectID": "engagements/future/example-future-event.html#details",
+    "href": "engagements/future/example-future-event.html#details",
+    "title": "Example future event",
+    "section": "Details",
+    "text": "Details\n\nRole: Speaker / panellist / facilitator\nHost: Organisation name\nLocation: City or online\nLinks: Slides, recording, event page"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "This page provides an overview of my research interests."
+  },
+  {
+    "objectID": "research.html#research-areas",
+    "href": "research.html#research-areas",
+    "title": "Research",
+    "section": "Research areas",
+    "text": "Research areas\n\nGeometry-driven hyperuniformity\nTopological analysis for information flow\nSupervision"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "This page will list publications, preprints, and selected outputs."
+  },
+  {
+    "objectID": "research/topological-analysis-information-flow.html",
+    "href": "research/topological-analysis-information-flow.html",
+    "title": "Topological analysis for information flow",
+    "section": "",
+    "text": "This page will introduce my work on topological data analysis, information flow, and hidden structure in complex systems."
+  },
+  {
+    "objectID": "research/geometry-driven-hyperuniformity.html",
+    "href": "research/geometry-driven-hyperuniformity.html",
+    "title": "Geometry-driven hyperuniformity",
+    "section": "",
+    "text": "This page will introduce my work on geometry-driven hyperuniformity."
+  },
+  {
+    "objectID": "research/geometry-driven-hyperuniformity.html#interactive-demo",
+    "href": "research/geometry-driven-hyperuniformity.html#interactive-demo",
+    "title": "Geometry-driven hyperuniformity",
+    "section": "Interactive demo",
+    "text": "Interactive demo\nLaunch interactive demo"
+  },
+  {
+    "objectID": "engagements.html",
+    "href": "engagements.html",
+    "title": "Engagements",
+    "section": "",
+    "text": "This page collects talks, workshops, panels, podcasts, public programs, and other events I have participated in or will participate in."
+  },
+  {
+    "objectID": "engagements.html#future-activities",
+    "href": "engagements.html#future-activities",
+    "title": "Engagements",
+    "section": "Future activities",
+    "text": "Future activities\n\n\n\n\n\n\n\n\n\n\nExample future event\n\n\n\nTalk\n\nCybernetics\n\n\n\nA short description of the future event, talk, workshop, or public activity.\n\n\n\nSep 1, 2026\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "engagements.html#past-activities",
+    "href": "engagements.html#past-activities",
+    "title": "Engagements",
+    "section": "Past activities",
+    "text": "Past activities\n\n\n\n\n\n\n\n\n\n\nExample past event\n\n\n\nWorkshop\n\nAI\n\n\n\nA short description of the past event, talk, workshop, or public activity.\n\n\n\nNov 15, 2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "research/supervision.html",
+    "href": "research/supervision.html",
+    "title": "Supervision",
+    "section": "",
+    "text": "This page will outline my supervision interests, current projects, and prospective student information."
+  },
+  {
+    "objectID": "education.html",
+    "href": "education.html",
+    "title": "Education",
+    "section": "",
+    "text": "This page will describe my teaching commitments across undergraduate, postgraduate, and non-award courses."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "This is a website for Sungyeon.\n\\[\n\\frac{dX}{dt} = rN(1-N)\n\\]"
+    "text": "Transdisciplinary researcher and educator.\nMy work sits at the intersection of:\n\nCybernetics & Complexity\nHuman × AI\nTopological Data Analysis\n\nI am interested in how patterns, behaviours, and meaning emerge in complex systems, and in developing conceptual and practical tools that help people navigate technological futures with clarity and care."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "engagements/past/example-past-event.html",
+    "href": "engagements/past/example-past-event.html",
+    "title": "Example past event",
     "section": "",
-    "text": "Hi everyone, 안녕하세요!"
+    "text": "Add the full event details here."
+  },
+  {
+    "objectID": "engagements/past/example-past-event.html#details",
+    "href": "engagements/past/example-past-event.html#details",
+    "title": "Example past event",
+    "section": "Details",
+    "text": "Details\n\nRole: Speaker / panellist / facilitator\nHost: Organisation name\nLocation: City or online\nLinks: Slides, recording, event page"
   }
 ]

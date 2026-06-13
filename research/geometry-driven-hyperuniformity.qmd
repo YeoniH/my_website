@@ -1,0 +1,9 @@
+---
+title: "Geometry-driven hyperuniformity"
+---
+
+This page will introduce my work on geometry-driven hyperuniformity.
+
+## Interactive demo
+
+[Launch interactive demo](../interactive_lloyd/lloyd_demo_app.html){.btn .btn-primary}
