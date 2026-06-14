@@ -8,8 +8,6 @@ website:
   title: "Sungyeon Hong"
   navbar:
     left:
-      - text: Home
-        href: index.qmd
       - text: Research
         menu:
           - text: Overview
@@ -24,8 +22,8 @@ website:
         href: education.qmd
       - text: Engagements
         href: engagements.qmd
-      - text: Publications
-        href: publications.qmd
+      - text: FAQ
+        href: faq.qmd
       - text: Contact
         href: contact.qmd
 

@@ -1,5 +1,93 @@
 ---
-title: "Education"
+title: ""
+page-layout: full
+format:
+  html:
+    toc: false
 ---
 
-This page will describe my teaching commitments across undergraduate, postgraduate, and non-award courses.
+```{=html}
+<style>
+.site-page {
+  --site-accent: #426b73;
+  --site-accent-soft: #e7f0f1;
+  --site-ink: #1f2933;
+  --site-muted: #5f6f7a;
+  --site-line: #d7e1e4;
+  --site-bg: #ffffff;
+}
+
+.site-intro,
+.site-section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem;
+}
+
+.site-intro {
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+}
+
+.site-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: var(--site-accent);
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.site-intro h2 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1;
+  margin: 0 0 1.2rem;
+  color: var(--site-ink);
+}
+
+.site-lede {
+  max-width: 900px;
+  font-size: 1.12rem;
+  line-height: 1.75;
+  color: var(--site-ink);
+}
+
+.site-muted {
+  color: var(--site-muted);
+}
+
+.site-band {
+  background: #f7fafb;
+  border-top: 1px solid var(--site-line);
+  border-bottom: 1px solid var(--site-line);
+}
+
+.site-section-title {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  margin: 0 0 1.2rem;
+  color: var(--site-ink);
+}
+
+.site-section p,
+.site-section li {
+  line-height: 1.65;
+}
+</style>
+
+<div class="site-page">
+
+<section class="site-intro">
+  <div class="site-kicker">Teaching · Supervision · Learning by making</div>
+  <h2>Education</h2>
+  <div class="site-lede">
+    <p>My teaching engagement spans undergraduate, postgraduate, and non-award learning contexts, with an emphasis on conceptual clarity, hands-on inquiry, and reflective engagement with complex systems.</p>
+    <p><span class="site-muted">This page gathers my teaching commitments, learning design interests, and educational activities.</span></p>
+  </div>
+</section>
+<section class="site-section">
+  <h2 class="site-section-title">Teaching and learning</h2>
+  <p>This page will describe my teaching commitments across undergraduate, postgraduate, and non-award courses.</p>
+</section>
+
+</div>
+```

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Research – Sungyeon Hong</title>
+<title>research – Sungyeon Hong</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3cbf9fa670015d5da8a21d517caf2a17.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-19f9f6dfbad63c64d447301a7ac90294.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -92,10 +92,6 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Research</span>
@@ -128,8 +124,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Engagements</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html"> 
-<span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="./faq.html"> 
+<span class="menu-text">FAQ</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./contact.html"> 
@@ -143,53 +139,184 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#research-areas" id="toc-research-areas" class="nav-link active" data-scroll-target="#research-areas">Research areas</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Research</h1>
+
+
+
+<style>
+.research-page {
+  --research-accent: #426b73;
+  --research-accent-soft: #e7f0f1;
+  --research-ink: #1f2933;
+  --research-muted: #5f6f7a;
+  --research-line: #d7e1e4;
+  --research-bg: #ffffff;
+}
+
+.research-intro,
+.research-section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem;
+}
+
+.research-intro {
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+}
+
+.research-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: var(--research-accent);
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.research-intro h2 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1;
+  margin: 0 0 1.2rem;
+  color: var(--research-ink);
+}
+
+.research-lede {
+  max-width: 900px;
+  font-size: 1.12rem;
+  line-height: 1.75;
+  color: var(--research-ink);
+}
+
+.research-muted {
+  color: var(--research-muted);
+}
+
+.research-band {
+  background: #f7fafb;
+  border-top: 1px solid var(--research-line);
+  border-bottom: 1px solid var(--research-line);
+}
+
+.research-section-title {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  margin: 0 0 1.2rem;
+  color: var(--research-ink);
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.research-card {
+  background: var(--research-bg);
+  border: 1px solid var(--research-line);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(31, 41, 51, 0.05);
+  height: 100%;
+}
+
+.research-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  background: var(--research-accent-soft);
+}
+
+.research-card-body {
+  padding: 1.2rem;
+}
+
+.research-card h3 {
+  font-size: 1.15rem;
+  margin: 0 0 0.55rem;
+  color: var(--research-ink);
+}
+
+.research-card p {
+  margin: 0 0 0.9rem;
+  color: var(--research-muted);
+  line-height: 1.55;
+}
+
+.research-card a {
+  font-weight: 650;
+  text-decoration: none;
+  color: var(--research-accent);
+}
+
+@media (max-width: 820px) {
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<div class="research-page">
+
+<section class="research-intro">
+  <div class="research-kicker">Complexity · Information · Topology</div>
+  <h2 class="anchored">Research</h2>
+  <div class="research-lede">
+    <p>
+      My research investigates how global patterns, behaviours, and meanings emerge from local interactions in complex systems. Beginning with my PhD work on geometry-driven hyperuniformity, I became interested in how simple generative rules can produce striking forms of collective order.
+    </p>
+    <p>
+      My current work extends this perspective to information systems, especially those mediated by generative AI, where feedback, adaptation, and communication shape how knowledge circulates and evolves.
+    </p>
+    <p class="research-muted">
+      Across these domains, topology provides a unifying lens: a way to identify structural signatures in high-dimensional systems and to develop diagnostics for robustness, information flow, and knowledge integrity.
+    </p>
+  </div>
+</section>
+
+<section class="research-band">
+  <div class="research-section">
+    <h2 class="research-section-title anchored">Research themes</h2>
+    <div class="research-grid">
+      <article class="research-card">
+        <img src="images/research-geometry-placeholder.jpg" alt="Placeholder image for geometry-driven complexity">
+        <div class="research-card-body">
+          <h3 class="anchored">Geometry-driven complexity</h3>
+          <p>How local geometric interactions and constraints can generate large-scale order, pattern formation, and hyperuniform structure.</p>
+          <a href="research/hyperuniformity.html">Read more →</a>
+        </div>
+      </article>
+
+      <article class="research-card">
+        <img src="images/research-human-ai-placeholder.jpg" alt="Placeholder image for information dynamics in human-AI systems">
+        <div class="research-card-body">
+          <h3 class="anchored">Information dynamics in human–AI systems</h3>
+          <p>How information circulates, adapts, and changes through feedback between people, organisations, and generative AI systems.</p>
+          <a href="research/information-dynamics.html">Read more →</a>
+        </div>
+      </article>
+
+      <article class="research-card">
+        <img src="images/research-knowledge-integrity-placeholder.jpg" alt="Placeholder image for knowledge integrity and structural diagnostics">
+        <div class="research-card-body">
+          <h3 class="anchored">Knowledge integrity &amp; structural diagnostics</h3>
+          <p>Topological and structural methods for diagnosing coherence, robustness, distortion, and integrity in knowledge systems.</p>
+          <a href="research/knowledge-integrity.html">Read more →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>My research investigates how global patterns, behaviours, and meanings emerge from local interactions in complex systems. Beginning with my PhD work on geometry-driven hyperuniformity, I became interested in how simple generative rules can produce striking forms of collective order.</p>
-<p>My current work extends this perspective to information systems, especially those mediated by generative AI, where feedback, adaptation, and communication shape how knowledge circulates and evolves.</p>
-<p>Across these domains, topology provides a unifying lens: a way to identify structural signatures in high-dimensional systems and to develop diagnostics for robustness, information flow, and knowledge integrity.</p>
-<section id="research-areas" class="level2">
-<h2 class="anchored" data-anchor-id="research-areas">Research areas</h2>
-<ul>
-<li><a href="./research/hyperuniformity.html">Geometry-driven complexity</a></li>
-<li><a href="./research/information-dynamics.html">Information dynamics in human–AI systems</a></li>
-<li><a href="./research/knowledge-integrity.html">Structural diagnostics for knowledge integrity</a></li>
-</ul>
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

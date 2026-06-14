@@ -1,16 +1,176 @@
 ---
-title: "Research"
+title: ""
+page-layout: full
+format:
+  html:
+    toc: false
 ---
 
-My research investigates how global patterns, behaviours, and meanings emerge from local interactions in complex systems. Beginning with my PhD work on geometry-driven hyperuniformity, I became interested in how simple generative rules can produce striking forms of collective order. 
+```{=html}
+<style>
+.research-page {
+  --research-accent: #426b73;
+  --research-accent-soft: #e7f0f1;
+  --research-ink: #1f2933;
+  --research-muted: #5f6f7a;
+  --research-line: #d7e1e4;
+  --research-bg: #ffffff;
+}
 
-My current work extends this perspective to information systems, especially those mediated by generative AI, where feedback, adaptation, and communication shape how knowledge circulates and evolves. 
+.research-intro,
+.research-section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem;
+}
 
-Across these domains, topology provides a unifying lens: a way to identify structural signatures in high-dimensional systems and to develop diagnostics for robustness, information flow, and knowledge integrity.
+.research-intro {
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+}
 
+.research-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: var(--research-accent);
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
 
-## Research areas
+.research-intro h2 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1;
+  margin: 0 0 1.2rem;
+  color: var(--research-ink);
+}
 
-- [Geometry-driven complexity](research/hyperuniformity.qmd)
-- [Information dynamics in human–AI systems](research/information-dynamics.qmd)
-- [Structural diagnostics for knowledge integrity](research/knowledge-integrity.qmd)
+.research-lede {
+  max-width: 900px;
+  font-size: 1.12rem;
+  line-height: 1.75;
+  color: var(--research-ink);
+}
+
+.research-muted {
+  color: var(--research-muted);
+}
+
+.research-band {
+  background: #f7fafb;
+  border-top: 1px solid var(--research-line);
+  border-bottom: 1px solid var(--research-line);
+}
+
+.research-section-title {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  margin: 0 0 1.2rem;
+  color: var(--research-ink);
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.research-card {
+  background: var(--research-bg);
+  border: 1px solid var(--research-line);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(31, 41, 51, 0.05);
+  height: 100%;
+}
+
+.research-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  background: var(--research-accent-soft);
+}
+
+.research-card-body {
+  padding: 1.2rem;
+}
+
+.research-card h3 {
+  font-size: 1.15rem;
+  margin: 0 0 0.55rem;
+  color: var(--research-ink);
+}
+
+.research-card p {
+  margin: 0 0 0.9rem;
+  color: var(--research-muted);
+  line-height: 1.55;
+}
+
+.research-card a {
+  font-weight: 650;
+  text-decoration: none;
+  color: var(--research-accent);
+}
+
+@media (max-width: 820px) {
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<div class="research-page">
+
+<section class="research-intro">
+  <div class="research-kicker">Complexity · Information · Topology</div>
+  <h2>Research</h2>
+  <div class="research-lede">
+    <p>
+      My research investigates how global patterns, behaviours, and meanings emerge from local interactions in complex systems. Beginning with my PhD work on geometry-driven hyperuniformity, I became interested in how simple generative rules can produce striking forms of collective order.
+    </p>
+    <p>
+      My current work extends this perspective to information systems, especially those mediated by generative AI, where feedback, adaptation, and communication shape how knowledge circulates and evolves.
+    </p>
+    <p class="research-muted">
+      Across these domains, topology provides a unifying lens: a way to identify structural signatures in high-dimensional systems and to develop diagnostics for robustness, information flow, and knowledge integrity.
+    </p>
+  </div>
+</section>
+
+<section class="research-band">
+  <div class="research-section">
+    <h2 class="research-section-title">Research themes</h2>
+    <div class="research-grid">
+      <article class="research-card">
+        <img src="images/research-geometry-placeholder.jpg" alt="Placeholder image for geometry-driven complexity">
+        <div class="research-card-body">
+          <h3>Geometry-driven complexity</h3>
+          <p>How local geometric interactions and constraints can generate large-scale order, pattern formation, and hyperuniform structure.</p>
+          <a href="research/hyperuniformity.html">Read more →</a>
+        </div>
+      </article>
+
+      <article class="research-card">
+        <img src="images/research-human-ai-placeholder.jpg" alt="Placeholder image for information dynamics in human-AI systems">
+        <div class="research-card-body">
+          <h3>Information dynamics in human–AI systems</h3>
+          <p>How information circulates, adapts, and changes through feedback between people, organisations, and generative AI systems.</p>
+          <a href="research/information-dynamics.html">Read more →</a>
+        </div>
+      </article>
+
+      <article class="research-card">
+        <img src="images/research-knowledge-integrity-placeholder.jpg" alt="Placeholder image for knowledge integrity and structural diagnostics">
+        <div class="research-card-body">
+          <h3>Knowledge integrity & structural diagnostics</h3>
+          <p>Topological and structural methods for diagnosing coherence, robustness, distortion, and integrity in knowledge systems.</p>
+          <a href="research/knowledge-integrity.html">Read more →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+</div>
+```

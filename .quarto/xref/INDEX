@@ -58,5 +58,11 @@
   },
   "research/hyperuniformity.qmd": {
     "hyperuniformity.html": "bfde95ae"
+  },
+  "faq.qmd": {
+    "faq.html": "926a52ad"
+  },
+  "faq_rendering-issue.qmd": {
+    "faq_rendering-issue.html": "7e31e2a7"
   }
 }

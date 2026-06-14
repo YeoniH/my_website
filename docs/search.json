@@ -1,66 +1,10 @@
 [
   {
-    "objectID": "education.html",
-    "href": "education.html",
-    "title": "Education",
-    "section": "",
-    "text": "This page will describe my teaching commitments across undergraduate, postgraduate, and non-award courses."
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "My research investigates how global patterns, behaviours, and meanings emerge from local interactions in complex systems. Beginning with my PhD work on geometry-driven hyperuniformity, I became interested in how simple generative rules can produce striking forms of collective order.\nMy current work extends this perspective to information systems, especially those mediated by generative AI, where feedback, adaptation, and communication shape how knowledge circulates and evolves.\nAcross these domains, topology provides a unifying lens: a way to identify structural signatures in high-dimensional systems and to develop diagnostics for robustness, information flow, and knowledge integrity."
-  },
-  {
-    "objectID": "research.html#research-areas",
-    "href": "research.html#research-areas",
-    "title": "Research",
-    "section": "Research areas",
-    "text": "Research areas\n\nGeometry-driven complexity\nInformation dynamics in human–AI systems\nStructural diagnostics for knowledge integrity"
-  },
-  {
-    "objectID": "research/supervision.html",
-    "href": "research/supervision.html",
-    "title": "Supervision",
-    "section": "",
-    "text": "This page will outline my supervision interests, current projects, and prospective student information."
-  },
-  {
-    "objectID": "research/information-dynamics.html",
-    "href": "research/information-dynamics.html",
-    "title": "Information dynamics in human–AI systems",
-    "section": "",
-    "text": "How does information evolve when humans and AI systems participate in feedback loops?"
-  },
-  {
-    "objectID": "engagements/past/example-past-event.html",
-    "href": "engagements/past/example-past-event.html",
-    "title": "Example past event",
-    "section": "",
-    "text": "Add the full event details here."
-  },
-  {
-    "objectID": "engagements/past/example-past-event.html#details",
-    "href": "engagements/past/example-past-event.html#details",
-    "title": "Example past event",
-    "section": "Details",
-    "text": "Details\n\nRole: Speaker / panellist / facilitator\nHost: Organisation name\nLocation: City or online\nLinks: Slides, recording, event page"
-  },
-  {
     "objectID": "contact.html",
     "href": "contact.html",
-    "title": "Contact",
+    "title": "Sungyeon Hong",
     "section": "",
-    "text": "This page will provide contact details and links."
-  },
-  {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "This page will list publications, preprints, and selected outputs."
+    "text": "Contact · Collaboration · Conversation\n  Contact\n  \n    Please use this page as a starting point for enquiries about research, teaching, supervision, public engagement, or possible collaborations.\n    More detailed contact information and professional links can be added here as the website develops.\n  \n\n\n  Get in touch\n  This page will provide contact details and links."
   },
   {
     "objectID": "engagements/future/example-future-event.html",
@@ -77,52 +21,73 @@
     "text": "Details\n\nRole: Speaker / panellist / facilitator\nHost: Organisation name\nLocation: City or online\nLinks: Slides, recording, event page"
   },
   {
-    "objectID": "research/knowledge-integrity.html",
-    "href": "research/knowledge-integrity.html",
-    "title": "Structural diagnostics for knowledge integrity",
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Sungyeon Hong",
     "section": "",
-    "text": "How can we detect when knowledge structures remain coherent, robust, or trustworthy?"
+    "text": "Complexity · Information · Topology\n  Research\n  \n    \n      My research investigates how global patterns, behaviours, and meanings emerge from local interactions in complex systems. Beginning with my PhD work on geometry-driven hyperuniformity, I became interested in how simple generative rules can produce striking forms of collective order.\n    \n    \n      My current work extends this perspective to information systems, especially those mediated by generative AI, where feedback, adaptation, and communication shape how knowledge circulates and evolves.\n    \n    \n      Across these domains, topology provides a unifying lens: a way to identify structural signatures in high-dimensional systems and to develop diagnostics for robustness, information flow, and knowledge integrity.\n    \n  \n\n\n\n  \n    Research themes\n    \n      \n        \n        \n          Geometry-driven complexity\n          How local geometric interactions and constraints can generate large-scale order, pattern formation, and hyperuniform structure.\n          Read more →\n        \n      \n\n      \n        \n        \n          Information dynamics in human–AI systems\n          How information circulates, adapts, and changes through feedback between people, organisations, and generative AI systems.\n          Read more →\n        \n      \n\n      \n        \n        \n          Knowledge integrity & structural diagnostics\n          Topological and structural methods for diagnosing coherence, robustness, distortion, and integrity in knowledge systems.\n          Read more →"
+  },
+  {
+    "objectID": "faq.html",
+    "href": "faq.html",
+    "title": "Sungyeon Hong",
+    "section": "",
+    "text": "FAQ · Orientation · Small human details\n  Frequently Asked Questions\n  \n    This page gathers a few common questions about my research, teaching, supervision, and me as a human.\n    It is intended as a lightweight orientation point for students, collaborators, event organisers, and anyone curious about how my work connects across cybernetics, complexity, AI, and topology.\n  \n\n\n\n\nResearch\n\nWhat connects your different research interests?\n\n\nMy work is connected by a shared interest in how global patterns emerge from local interactions. Across geometry-driven pattern formation, human--AI systems, and knowledge integrity, I use topology as a lens for identifying structure, connectivity, flow, and robustness in complex systems.\n\n\n\n\n\nHow did your PhD work lead you into complexity science?\n\n\nMy PhD work on geometry-driven hyperuniformity introduced me to the richness of systems in which simple local rules can generate striking large-scale order. That became an entry point into broader questions about emergence, adaptation, nonlinearity, and collective behaviour.\n\n\n\n\n\nWhat do you mean by studying information dynamics?\n\n\nI am interested in how information moves, changes, stabilises, or becomes distorted as it circulates through systems. This includes communication among people, interactions between humans and AI systems, and the evolving structures through which knowledge is produced, interpreted, and trusted.\n\n\n\n\n\nWhy topology?\n\n\nTopology offers a way to study shape, structure, and connectivity without reducing a system to isolated parts. I use topological thinking and methods to identify structural signatures in high-dimensional or dynamic systems, especially where meaningful patterns may not be immediately visible.\n\n\n\n\nTeaching and supervision\n\nWhat kinds of students do you supervise?\n\n\nI am interested in supervising students whose projects engage with complexity, cybernetics, information dynamics, topology, AI-mediated systems, or related questions about emergence and knowledge systems. Projects can be computational, conceptual, applied, or transdisciplinary.\n\n\n\n\n\nDo students need a strong mathematical background to work with you?\n\n\nNot always. Some projects require mathematical or computational depth, while others are more conceptual, design-oriented, or interpretive. What matters most is a willingness to work carefully across methods, assumptions, and levels of abstraction.\n\n\n\n\n\nWhat is your teaching style?\n\n\nMy teaching is grounded in inquiry, reflection, and learning by making. I aim to help students develop conceptual clarity while also engaging with practical tools, prototypes, examples, and situated problems.\n\n\n\n\nCollaboration and public engagement\n\nWhat kinds of collaborations are you interested in?\n\n\nI am especially interested in collaborations that bring together complexity science, cybernetics, AI, knowledge systems, communication, education, or creative practice. I am drawn to projects where computational and conceptual tools can help illuminate hidden structures or dynamics.\n\n\n\n\n\nAre you available for talks, workshops, or public events?\n\n\nI am open to invitations that align with my research and teaching interests, particularly around cybernetics, complexity, generative AI, human--AI relations, responsible technology, and topology-informed approaches to understanding systems.\n\n\n\n\n\nHow should people contact you?\n\n\nThe best starting point is the contact information listed on this website. For supervision or collaboration enquiries, it is helpful to include a brief description of the topic, context, and what kind of conversation or outcome you have in mind.\n\n\n\n\nMe-human\n\nHow do you pronounce your name?\n\n\nMany people find my name difficult to pronounce (it's okay, sometimes I do too!) and often misspell it by adding a mysterious \"g\" at the end. Here's a simple trick.\nI love singing. The verb \"sing\" becomes \"sang\" and then \"sung\". Say the last one again: That's exactly how the first part of my name sounds.\nThe second part is \"yeon\", which is shorter than \"yawn\" and lighter than \"young\". Put them together and you get **Sung-yeon**.\nDon't worry if you don't get it right the first time — I answer to a surprising number of variations.\n\n\n\n\n\n\nThis FAQ is intentionally informal and evolving. I expect to update it as my research, teaching, and collaborations continue to develop."
   },
   {
     "objectID": "research/hyperuniformity.html",
     "href": "research/hyperuniformity.html",
-    "title": "Geometry-driven complexity",
+    "title": "Sungyeon Hong",
     "section": "",
-    "text": "How can simple geometric interactions generate large-scale order?"
+    "text": "Pattern formation · Hyperuniformity · Emergent order\n  Geometry-driven complexity\n  \n    How can simple geometric interactions generate large-scale order?\n  \n\n\n\n\n  Overview\n  \n    This research theme traces my entry into complexity science through geometry-driven hyperuniformity and related questions of pattern formation. It asks how local geometric interactions, constraints, and relaxation rules can generate large-scale order.\n  \n\n  Interactive demo\n  \n    The interactive Lloyd demo provides an intuition-building way to explore how local relaxation dynamics can transform point configurations and their emergent structure.\n  \n  Launch interactive demo →\n\n\n\n\n\n  \n    Selected publications\n    \n      This list is intended for publications connected to geometry-driven hyperuniformity, pattern formation, local relaxation, and emergent order. Replace each placeholder with a relevant publication for this research theme.\n    \n\n    \n      \n        \n        \n          Publication title placeholder\n          \n            Authors: Author One, Author Two, Sungyeon Hong\n            Year: 20XX\n            Publisher / venue: Journal or conference name\n          \n          \n            Add a brief description of the paper here. Focus on the core question, method, system studied, and how the work contributes to this research theme.\n          \n          \n            DOI link →\n          \n        \n      \n\n      \n        \n        \n          Publication title placeholder\n          \n            Authors: Author One, Author Two, Sungyeon Hong\n            Year: 20XX\n            Publisher / venue: Journal or conference name\n          \n          \n            Add a short, reader-friendly summary that explains why this publication matters and how it connects to the larger research agenda.\n          \n          \n            DOI link →"
   },
   {
-    "objectID": "research/hyperuniformity.html#interactive-demo",
-    "href": "research/hyperuniformity.html#interactive-demo",
-    "title": "Geometry-driven complexity",
-    "section": "Interactive demo",
-    "text": "Interactive demo\nLaunch interactive demo"
+    "objectID": "research/information-dynamics.html",
+    "href": "research/information-dynamics.html",
+    "title": "Sungyeon Hong",
+    "section": "",
+    "text": "Generative AI · Feedback · Adaptation\n  Information dynamics in human–AI systems\n  \n    How does information evolve when humans and AI systems participate in feedback loops?\n  \n\n\n\n\n  Overview\n  \n    This research theme examines how information evolves when humans and AI systems participate in feedback loops. I am interested in generative AI not only as a technical artefact, but as a latent field shaping cultural, organisational, and epistemic dynamics.\n  \n  \n    Cybernetics offers a practical language for studying these systems: communication, feedback, adaptation, observation, and recursive change.\n  \n\n\n\n\n\n  \n    Selected publications\n    \n      This list is intended for publications connected to human–AI interaction, generative AI, communication, feedback, adaptation, and information dynamics. Replace each placeholder with a relevant publication for this research theme.\n    \n\n    \n      \n        \n        \n          Publication title placeholder\n          \n            Authors: Author One, Author Two, Sungyeon Hong\n            Year: 20XX\n            Publisher / venue: Journal or conference name\n          \n          \n            Add a brief description of the paper here. Focus on the core question, method, system studied, and how the work contributes to this research theme.\n          \n          \n            DOI link →\n          \n        \n      \n\n      \n        \n        \n          Publication title placeholder\n          \n            Authors: Author One, Author Two, Sungyeon Hong\n            Year: 20XX\n            Publisher / venue: Journal or conference name\n          \n          \n            Add a short, reader-friendly summary that explains why this publication matters and how it connects to the larger research agenda.\n          \n          \n            DOI link →"
   },
   {
     "objectID": "engagements.html",
     "href": "engagements.html",
-    "title": "Engagements",
+    "title": "Sungyeon Hong",
     "section": "",
-    "text": "This page collects talks, workshops, panels, podcasts, public programs, and other events I have participated in or will participate in."
+    "text": "Events · Outreach · Public engagement\n  Engagements\n  \n    Selected talks, workshops, panels, podcasts, public programs, and other events where I share, test, and develop ideas with wider communities.\n    This page is organised as a living archive of future and past engagements.\n  \n\n\n  This page collects talks, workshops, panels, podcasts, public programs, and other events I have participated in or will participate in.\n\n  Future activities\n\n  {#future-activities}\n  \n\n  Past activities\n\n  {#past-activities}\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample future event\n\n\n\nTalk\n\nCybernetics\n\n\n\nA short description of the future event, talk, workshop, or public activity.\n\n\n\nSep 1, 2026\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\n\n\n\n\n\nExample past event\n\n\n\nWorkshop\n\nAI\n\n\n\nA short description of the past event, talk, workshop, or public activity.\n\n\n\nNov 15, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "engagements.html#future-activities",
-    "href": "engagements.html#future-activities",
-    "title": "Engagements",
-    "section": "Future activities",
-    "text": "Future activities\n\n\n\n\n\n\n\n\n\n\nExample future event\n\n\n\nTalk\n\nCybernetics\n\n\n\nA short description of the future event, talk, workshop, or public activity.\n\n\n\nSep 1, 2026\n\n\n\n\n\n\nNo matching items"
+    "objectID": "research/knowledge-integrity.html",
+    "href": "research/knowledge-integrity.html",
+    "title": "Sungyeon Hong",
+    "section": "",
+    "text": "Knowledge systems · Robustness · Topological diagnostics\n  Structural diagnostics for knowledge integrity\n  \n    How can we detect when knowledge structures remain coherent, robust, or trustworthy?\n  \n\n\n\n\n  Overview\n  \n    This research theme focuses on developing structural diagnostics for knowledge integrity. I am interested in how knowledge structures remain coherent, become distorted, or degrade as they move through technological and social systems.\n  \n  \n    Through a topological lens, integrity becomes something that can be explored through shape, connectivity, robustness, drift, and the relationships among parts of a knowledge system.\n  \n\n\n\n\n\n  \n    Selected publications\n    \n      This list is intended for publications connected to knowledge integrity, structural diagnostics, epistemic robustness, semantic drift, and trustworthy knowledge systems. Replace each placeholder with a relevant publication for this research theme.\n    \n\n    \n      \n        \n        \n          Publication title placeholder\n          \n            Authors: Author One, Author Two, Sungyeon Hong\n            Year: 20XX\n            Publisher / venue: Journal or conference name\n          \n          \n            Add a brief description of the paper here. Focus on the core question, method, system studied, and how the work contributes to this research theme.\n          \n          \n            DOI link →\n          \n        \n      \n\n      \n        \n        \n          Publication title placeholder\n          \n            Authors: Author One, Author Two, Sungyeon Hong\n            Year: 20XX\n            Publisher / venue: Journal or conference name\n          \n          \n            Add a short, reader-friendly summary that explains why this publication matters and how it connects to the larger research agenda.\n          \n          \n            DOI link →"
   },
   {
-    "objectID": "engagements.html#past-activities",
-    "href": "engagements.html#past-activities",
-    "title": "Engagements",
-    "section": "Past activities",
-    "text": "Past activities\n\n\n\n\n\n\n\n\n\n\nExample past event\n\n\n\nWorkshop\n\nAI\n\n\n\nA short description of the past event, talk, workshop, or public activity.\n\n\n\nNov 15, 2025\n\n\n\n\n\n\nNo matching items"
+    "objectID": "education.html",
+    "href": "education.html",
+    "title": "Sungyeon Hong",
+    "section": "",
+    "text": "Teaching · Supervision · Learning by making\n  Education\n  \n    My teaching engagement spans undergraduate, postgraduate, and non-award learning contexts, with an emphasis on conceptual clarity, hands-on inquiry, and reflective engagement with complex systems.\n    This page gathers my teaching commitments, learning design interests, and educational activities.\n  \n\n\n  Teaching and learning\n  This page will describe my teaching commitments across undergraduate, postgraduate, and non-award courses."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Home",
+    "title": "Sungyeon Hong",
     "section": "",
-    "text": "Transdisciplinary researcher and educator.\nMy research sits at the intersection of topology, complexity science, cybernetics, and information dynamics. I study how structure emerges, evolves, and sometimes degrades in systems composed of many interacting parts—from geometric point patterns to human–AI communication systems and knowledge infrastructures.\nAcross these projects, I use topology not only as a mathematical toolkit, but as a way of seeing: a means of identifying shapes, holes, flows, and structural signatures that reveal how local interactions give rise to global phenomena."
+    "text": "Mathematics · Cybernetics · Complexity\n    Sungyeon Hong\n    \n      Transdisciplinary researcher and educator, studying how structure, behaviour, and meaning emerge in complex systems.\n    \n    \n      Explore research\n      Get in touch\n    \n  \n\n\n\n  About\n  \n    \n      \n    \n    \n      \n        I am a Lecturer at the School of Cybernetics, Australian National University (ANU), in Canberra, Australia.\n      \n      \n        My research sits at the intersection of topology, complexity science, cybernetics, and information dynamics. I study how structure emerges, evolves, and sometimes degrades in systems composed of many interacting parts—from geometric point patterns to human–AI communication systems and knowledge landscapes.\n      \n      \n        Across these projects, I use topology not only as a mathematical toolkit, but as a way of seeing: a means of identifying shapes, holes, flows, and structural signatures that reveal how local interactions give rise to global phenomena.\n      \n    \n  \n\n\n\n\n  \n    \n      Teaching, outreach, and public engagement\n      \n        I teach across undergraduate, postgraduate, and non-award learning contexts, with an emphasis on helping learners reason with complexity, build conceptual tools, and engage responsibly with emerging technologies.\n      \n      \n        EducationTeaching commitments and learning experiences\n        EngagementsTalks, workshops, panels, and public activities\n        PublicationsSelected papers and research outputs"
+  },
+  {
+    "objectID": "engagements/past/example-past-event.html",
+    "href": "engagements/past/example-past-event.html",
+    "title": "Example past event",
+    "section": "",
+    "text": "Add the full event details here."
+  },
+  {
+    "objectID": "engagements/past/example-past-event.html#details",
+    "href": "engagements/past/example-past-event.html#details",
+    "title": "Example past event",
+    "section": "Details",
+    "text": "Details\n\nRole: Speaker / panellist / facilitator\nHost: Organisation name\nLocation: City or online\nLinks: Slides, recording, event page"
   }
 ]
