@@ -60,7 +60,6 @@
   }
   .control.wide { grid-column: span 2; }
   .control.buttons { grid-column: span 2; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-  .control[title], .metric-card[title] { cursor: help; }
   label {
     display: block;
     font-size: 0.78rem;
@@ -99,7 +98,7 @@
   button:hover { filter: brightness(0.97); }
   .main {
     display: grid;
-    grid-template-columns: minmax(420px, 1.1fr) minmax(420px, 0.9fr);
+    grid-template-columns: minmax(380px, 1fr) minmax(480px, 1.3fr);
     gap: 14px;
   }
   .panel {
@@ -108,6 +107,9 @@
     border-radius: 14px;
     padding: 12px;
     min-width: 0;
+  }
+  .scene-legend {
+    margin-top: -30px;
   }
   .scene-wrap {
     display: grid;
@@ -141,7 +143,7 @@
     gap: 10px;
   }
   .metric-card {
-    min-height: 192px;
+    min-height: 250px;
     border: 1px solid var(--line);
     border-radius: 12px;
     padding: 8px;
@@ -150,42 +152,107 @@
   .metric-title {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     gap: 8px;
     color: var(--muted);
     font-size: 0.8rem;
     margin-bottom: 4px;
   }
   .metric-title strong { color: var(--ink); }
-  .metric-title-left { display: flex; align-items: center; gap: 6px; min-width: 0; }
-  .scale-toggle { display: flex; align-items: center; gap: 4px; white-space: nowrap; }
-  .scale-toggle label { margin: 0; font-size: 0.72rem; }
-  .scale-toggle select { width: auto; padding: 3px 5px; font-size: 0.72rem; border-radius: 6px; }
-  .info-dot {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 16px; height: 16px; border-radius: 50%;
-    border: 1px solid #94a3b8; color: #475569; font-size: 0.7rem; font-weight: 700;
-    cursor: help; flex: 0 0 auto;
+  .metric-heading {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-width: 0;
   }
-  .metric-card svg { width: 100%; height: 150px; display: block; }
+  .help-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 999px;
+    background: #f8fafc;
+    color: var(--muted);
+    font-size: 0.68rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: help;
+    flex: 0 0 auto;
+  }
+  .help-icon:hover,
+  .help-icon:focus {
+    border-color: var(--accent);
+    color: var(--accent);
+    outline: none;
+  }
+  .metric-title-left {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .scale-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .scale-toggle label {
+    display: inline;
+    margin: 0;
+    font-size: 0.72rem;
+  }
+  .scale-toggle select {
+    width: auto;
+    min-width: 68px;
+    padding: 3px 5px;
+    font-size: 0.72rem;
+  }
+  .scale-note {
+    border: 1px solid #e5e7eb;
+    border-radius: 999px;
+    padding: 2px 6px;
+    background: #f8fafc;
+    color: var(--muted);
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+  .metric-card svg { width: 100%; height: 205px; display: block; }
   .legend {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 4px;
     flex-wrap: wrap;
     font-size: 0.78rem;
     color: var(--muted);
     padding-top: 3px;
   }
-  .button-legend {
-    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-    border-left: 1px solid #e5e7eb; padding-left: 10px; min-height: 32px;
+  .swatch { display: inline-block; width: 12px; height: 12px; border: 1px solid #9ca3af; margin-right: 2px; }
+  
+  .legend-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
   }
-  .button-legend-title { color: var(--muted); font-size: 0.74rem; font-weight: 700; }
-  .swatch { display: inline-block; width: 12px; height: 12px; border: 1px solid #9ca3af; vertical-align: -2px; margin-right: 4px; }
-  .phasebar-wrap { display: inline-flex; align-items: center; gap: 5px; }
+  .phase-legend {
+    margin-left: auto; /* hfill-like spacer */
+  }
+  .legend-group > span,
+  .phasebar-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+  }
   .phasebar {
-    display: inline-block; width: 96px; height: 12px; border: 1px solid #9ca3af;
-    background: linear-gradient(90deg,#6e40aa 0%,#ff5e63 16%,#ffc13b 33%,#2ed36f 50%,#1f9ceb 66%,#5a66ee 83%,#6e40aa 100%);
+    display: inline-block;
+    width: 90px;
+    height: 12px;
+    border: 1px solid #9ca3af;
+    border-radius: 999px;
+    background: linear-gradient(90deg,#6e40aa,#be3caf,#fe4b83,#ff7847,#e2b72f,#aff05b,#52f667,#1ddfa3,#23abd8,#4c6edb,#6e40aa);
   }
   .note {
     color: var(--muted);
@@ -194,7 +261,7 @@
   }
   .cell { stroke: #111827; stroke-width: 0.7; vector-effect: non-scaling-stroke; }
   .point { fill: #111827; stroke: white; stroke-width: 0.65; vector-effect: non-scaling-stroke; }
-  .point.perturbed { fill: #ef4444; stroke: #ffffff; stroke-width: 1.1; }
+  .point.perturbed-point { fill: #dc2626; stroke: white; stroke-width: 0.85; }
   .boundary { fill: none; stroke: #111827; stroke-width: 1.5; vector-effect: non-scaling-stroke; }
   .axis path, .axis line { stroke: #cbd5e1; }
   .axis text { fill: #64748b; font-size: 10px; }
@@ -224,39 +291,39 @@
       <label for="nPoints">Number of points <span id="nPointsValue" class="value"></span></label>
       <input id="nPoints" type="range" min="20" max="360" step="1" value="100">
     </div>
-    <div class="control" title="Initial condition. Random draws iid points uniformly in the domain, equivalent to a homogeneous Poisson point process conditioned on the selected number of points. Regular uses a triangular-like lattice; jittered regular adds small random offsets.">
-      <label for="initialCondition">Initial condition</label>
+    <div class="control">
+      <label for="initialCondition">Initial condition <span class="help-icon" title="Random initial states are generated as a Poisson point process: points are sampled independently and uniformly over the unit square. Regular options start from a triangular-like lattice, with optional jitter.">?</span></label>
       <select id="initialCondition">
         <option value="random">random</option>
         <option value="regular">regular triangular-like</option>
         <option value="jittered">jittered regular</option>
       </select>
     </div>
-    <div class="control" title="Constraint / boundary. Periodic torus wraps positions and computes periodic neighbour geometry; bounded square clips points and Voronoi cells to the unit square.">
-      <label for="constraintMode">Constraint / boundary</label>
+    <div class="control">
+      <label for="constraintMode">Constraint / boundary <span class="help-icon" title="Periodic torus wraps points across opposite edges, approximating an unbounded periodic sample. Bounded square keeps points inside the visible box and uses clipped Voronoi cells.">?</span></label>
       <select id="constraintMode">
         <option value="periodic">periodic torus</option>
         <option value="bounded">bounded square</option>
       </select>
     </div>
-    <div class="control" title="Voronoi colour mode. n-sided cells colours each cell by its number of sides; hexatic phase angle colours each cell by arg(psi_6) on a cyclic colour scale from -pi to pi.">
-      <label for="viewMode">Voronoi colour mode</label>
+    <div class="control">
+      <label for="viewMode">Voronoi colour mode <span class="help-icon" title="n-sided mode colours cells by the number of Voronoi neighbours. Hexatic phase mode colours cells by the phase of the local sixfold orientational order parameter over [-π, π].">?</span></label>
       <select id="viewMode">
         <option value="sides">n-sided cells</option>
         <option value="phase">hexatic phase angle</option>
       </select>
     </div>
-    <div class="control" title="Seed. Integer seed controlling the reproducible initial point set and stochastic perturbations.">
-      <label for="seed">Seed</label>
+    <div class="control">
+      <label for="seed">Seed <span class="help-icon" title="Integer seed controlling reproducible initial points and stochastic perturbations. Change it to sample a different realisation.">?</span></label>
       <input id="seed" type="number" value="7" step="1">
     </div>
-    <div class="control" title="Animation speed. Approximate number of Lloyd iteration steps advanced per second while Run is active.">
-      <label for="speed">Animation speed <span id="speedValue" class="value"></span></label>
+    <div class="control">
+      <label for="speed">Animation speed <span id="speedValue" class="value"></span> <span class="help-icon" title="Approximate number of Lloyd steps advanced per second while the animation is running.">?</span></label>
       <input id="speed" type="range" min="1" max="60" step="1" value="12">
     </div>
 
-    <div class="control" title="Perturbation schedule. Choose whether random displacements are absent, applied persistently, restricted to a finite window, applied once as an impulse, or annealed down over the window.">
-      <label for="perturbSchedule">Perturbation schedule</label>
+    <div class="control">
+      <label for="perturbSchedule">Perturbation schedule <span class="help-icon" title="Choose when stochastic perturbations are applied: never, persistently, within a finite iteration window, once as an impulse, or with an annealed amplitude that decays over the selected window.">?</span></label>
       <select id="perturbSchedule">
         <option value="none">none / standard Lloyd</option>
         <option value="persistent">persistent</option>
@@ -265,16 +332,16 @@
         <option value="annealed">annealed</option>
       </select>
     </div>
-    <div class="control" title="Perturbation amplitude. Displacement scale as a fraction of the mean point spacing, here approximated as 1/sqrt(N) in the unit square.">
-      <label for="perturbAmplitude">Amplitude, fraction of mean spacing <span id="perturbAmplitudeValue" class="value"></span></label>
+    <div class="control">
+      <label for="perturbAmplitude">Amplitude, fraction of mean spacing <span id="perturbAmplitudeValue" class="value"></span> <span class="help-icon" title="Perturbation displacement scale as a fraction of the mean inter-point spacing, approximated here by 1/sqrt(N).">?</span></label>
       <input id="perturbAmplitude" type="range" min="0" max="0.5" step="0.005" value="0.03">
     </div>
-    <div class="control" title="Perturbed fraction. Fraction of eligible candidate points selected for stochastic displacement whenever the schedule fires.">
-      <label for="perturbProportion">Perturbed fraction <span id="perturbProportionValue" class="value"></span></label>
+    <div class="control">
+      <label for="perturbProportion">Perturbed fraction <span id="perturbProportionValue" class="value"></span> <span class="help-icon" title="Fraction of eligible candidate points selected for perturbation whenever the schedule is active.">?</span></label>
       <input id="perturbProportion" type="range" min="0" max="1" step="0.01" value="0.10">
     </div>
-    <div class="control" title="Perturbation distribution. Uniform disk samples random vectors inside a disk; Gaussian samples independent normal components; fixed radius uses a random direction with fixed magnitude; anisotropic Gaussian elongates the noise field.">
-      <label for="perturbDistribution">Perturbation distribution</label>
+    <div class="control">
+      <label for="perturbDistribution">Perturbation distribution <span class="help-icon" title="Distribution used to draw displacement vectors for selected points: uniform disk, Gaussian, fixed-radius random direction, or anisotropic Gaussian.">?</span></label>
       <select id="perturbDistribution">
         <option value="uniform-disk">uniform disk</option>
         <option value="gaussian">Gaussian</option>
@@ -282,8 +349,8 @@
         <option value="anisotropic-gaussian">anisotropic Gaussian</option>
       </select>
     </div>
-    <div class="control" title="Perturbation location. Restrict perturbations globally, to a central disk, to a strip, to non-hexagonal defect cells, or to high quantizer-energy cells.">
-      <label for="perturbLocation">Perturbation location</label>
+    <div class="control">
+      <label for="perturbLocation">Perturbation location <span class="help-icon" title="Candidate region for perturbations: global, local disk, vertical or horizontal strip, non-hexagonal cells, or high-cell-energy sites.">?</span></label>
       <select id="perturbLocation">
         <option value="global">global</option>
         <option value="disk">local disk</option>
@@ -293,29 +360,29 @@
         <option value="high-energy">high-energy cells</option>
       </select>
     </div>
-    <div class="control" title="Local radius / strip width. Controls the radius of the central disk or width of the central strip used for localized perturbations.">
-      <label for="localRadius">Local radius / strip width <span id="localRadiusValue" class="value"></span></label>
+    <div class="control">
+      <label for="localRadius">Local radius / strip width <span id="localRadiusValue" class="value"></span> <span class="help-icon" title="Controls the radius of the local disk or the width of the strip used for localized perturbation modes.">?</span></label>
       <input id="localRadius" type="range" min="0.05" max="0.75" step="0.01" value="0.25">
     </div>
 
-    <div class="control" title="Window start. First iteration step at which finite-window or annealed perturbations can be applied.">
-      <label for="windowStart">Window start</label>
+    <div class="control">
+      <label for="windowStart">Window start <span class="help-icon" title="First iteration at which windowed or annealed perturbations can be applied.">?</span></label>
       <input id="windowStart" type="number" min="1" step="1" value="20">
     </div>
-    <div class="control" title="Window end. Last iteration step at which finite-window or annealed perturbations can be applied.">
-      <label for="windowEnd">Window end</label>
+    <div class="control">
+      <label for="windowEnd">Window end <span class="help-icon" title="Last iteration at which windowed or annealed perturbations can be applied.">?</span></label>
       <input id="windowEnd" type="number" min="1" step="1" value="120">
     </div>
-    <div class="control" title="Perturb every k steps. Applies perturbations only every k eligible iteration steps within the active schedule.">
-      <label for="perturbEvery">Perturb every k steps</label>
+    <div class="control">
+      <label for="perturbEvery">Perturb every k steps <span class="help-icon" title="Perturbation cadence. A value of 1 perturbs at every eligible step; larger values perturb less frequently.">?</span></label>
       <input id="perturbEvery" type="number" min="1" step="1" value="1">
     </div>
-    <div class="control" title="Impulse step. The single iteration step at which an impulse perturbation is applied.">
-      <label for="impulseStep">Impulse step</label>
+    <div class="control">
+      <label for="impulseStep">Impulse step <span class="help-icon" title="The single iteration at which perturbations are applied when using the impulse schedule.">?</span></label>
       <input id="impulseStep" type="number" min="1" step="1" value="80">
     </div>
-    <div class="control wide" title="Center-of-mass correction. Subtracts the mean perturbation displacement from selected points, preventing a net translation of the perturbed subset.">
-      <label><input id="comCorrection" type="checkbox"> center-of-mass correction for perturbation displacements</label>
+    <div class="control wide">
+      <label><input id="comCorrection" type="checkbox"> center-of-mass correction for perturbation displacements <span class="help-icon" title="Subtracts the mean perturbation displacement from the selected perturbation field, preventing an artificial net translation of the selected points.">?</span></label>
       <div class="note">This keeps the selected perturbation field from adding a net translation.</div>
     </div>
     <div class="control buttons">
@@ -324,49 +391,100 @@
       <button id="runPause">Run</button>
       <button id="resetMetrics">Clear metrics</button>
       <button id="downloadCsv">Download metrics CSV</button>
-      <div class="button-legend" aria-label="colour scales">
-        <span class="button-legend-title">Cell colours</span>
-        <span><span class="swatch" style="background:#2563eb"></span>n=5</span>
-        <span><span class="swatch" style="background:#ffffff"></span>n=6</span>
-        <span><span class="swatch" style="background:#dc2626"></span>n=7</span>
-        <span class="phasebar-wrap" title="Hexatic phase angle colourbar from -pi to pi"><span>-pi</span><span class="phasebar"></span><span>pi</span></span>
-      </div>
     </div>
   </section>
 
   <section class="main">
     <div class="panel scene-wrap">
       <svg id="scene" viewBox="0 0 700 700" role="img" aria-label="Voronoi point pattern evolving under Lloyd iterations"></svg>
+      <div class="legend scene-legend" aria-label="colour legend">
+        <div class="legend-group nside-legend">
+          <span class="legend-title">n-sided cell:</span>
+          <span><span class="swatch" style="background:#2563eb"></span>n=5</span>
+          <span><span class="swatch" style="background:#ffffff"></span>n=6</span>
+          <span><span class="swatch" style="background:#dc2626"></span>n=7</span>
+          <span><span class="swatch" style="background:linear-gradient(90deg,#7c3aed,#16a34a,#f59e0b,#06b6d4,#be185d,#a3a3a3)"></span>other n</span>
+        </div>
+        
+        <div class="legend-group phase-legend">
+          <span>Hexatic phase:</span>
+          <span class="phasebar-wrap" title="Hexatic phase angle colourbar from -π to π">
+            <span>-π</span><span class="phasebar"></span><span>π</span>
+          </span>
+        </div>
+      </div>
       <div class="status">
         <div class="stat"><b>step</b><span id="statStep">0</span></div>
         <div class="stat"><b>N</b><span id="statN">0</span></div>
         <div class="stat"><b>energy</b><span id="statEnergy">-</span></div>
-        <div class="stat"><b>|ψ6| mean</b><span id="statPsi">-</span></div>
-        <div class="stat"><b>S_k</b><span id="statS">-</span></div>
+        <div class="stat"><b>|ψ_6| mean</b><span id="statPsi">-</span></div>
+        <div class="stat"><b>S low-k</b><span id="statS">-</span></div>
       </div>
       <div class="note">The demo uses D3 Voronoi cells and is intended for interactive intuition. Use the Python executable for publication-grade periodic calculations with freud-analysis.</div>
     </div>
 
     <div class="panel">
       <div class="metrics">
-        <div class="metric-card" title="Total quantizer energy: approximate second moment of each cell about its generator. Lloyd relaxation decreases this objective in the unperturbed ideal case.">
-          <div class="metric-title"><div class="metric-title-left"><strong>Total quantizer energy</strong><span id="energyCurrent"></span></div><div class="scale-toggle"><label for="energyScale">y</label><select id="energyScale"><option value="linear">linear</option><option value="log">log</option></select></div></div>
+        <div class="metric-card">
+          <div class="metric-title">
+            <span class="metric-heading"><strong>Total quantizer energy</strong><span class="help-icon" title="Approximate second moment of each Voronoi cell about its generator. In ideal unperturbed Lloyd relaxation this objective should generally decrease.">?</span></span>
+            <div class="metric-title-left">
+              <span id="energyCurrent"></span>
+              <div class="scale-toggle" title="Toggle the y-axis scale for this time series. The x-axis remains the iteration number.">
+                <label for="energyYScale">y</label>
+                <select id="energyYScale">
+                  <option value="linear">linear</option>
+                  <option value="log">log</option>
+                </select>
+              </div>
+            </div>
+          </div>
           <svg id="energyPlot"></svg>
         </div>
-        <div class="metric-card" title="Mean-square displacement: mean squared distance from each point to its current Voronoi-cell centroid target at that step.">
-          <div class="metric-title"><div class="metric-title-left"><strong>Mean-square displacement</strong><span id="msdCurrent"></span></div><div class="scale-toggle"><label for="msdScale">y</label><select id="msdScale"><option value="linear">linear</option><option value="log">log</option></select></div></div>
+        <div class="metric-card">
+          <div class="metric-title">
+            <span class="metric-heading"><strong>Mean-square displacement</strong><span class="help-icon" title="Mean squared distance moved by points during the latest Lloyd update, using the centroidal displacement between successive configurations.">?</span></span>
+            <div class="metric-title-left">
+              <span id="msdCurrent"></span>
+              <div class="scale-toggle" title="Toggle the y-axis scale for the mean-square displacement measured between successive iterations. The x-axis remains the iteration number.">
+                <label for="msdYScale">y</label>
+                <select id="msdYScale">
+                  <option value="linear">linear</option>
+                  <option value="log">log</option>
+                </select>
+              </div>
+            </div>
+          </div>
           <svg id="msdPlot"></svg>
         </div>
-        <div class="metric-card" title="Mean hexatic-order modulus: average magnitude of local psi_6, computed from neighbour bond angles. Values closer to 1 indicate locally sixfold orientational order.">
-          <div class="metric-title"><div class="metric-title-left"><strong>Mean hexatic-order modulus</strong><span id="psiCurrent"></span></div><div class="scale-toggle"><label for="psiScale">y</label><select id="psiScale"><option value="linear">linear</option><option value="log">log</option></select></div></div>
+        <div class="metric-card" title="Mean modulus of the local hexatic order parameter. This card is kept on a linear scale because the natural range is bounded between 0 and 1.">
+          <div class="metric-title">
+            <span class="metric-heading"><strong>Mean hexatic-order modulus</strong><span class="help-icon" title="Mean modulus of the local sixfold orientational order parameter ψ₆. Values closer to 1 indicate stronger local hexagonal orientational order.">?</span></span>
+            <div class="metric-title-left">
+              <span id="psiCurrent"></span>
+              <span class="scale-note">linear</span>
+            </div>
+          </div>
           <svg id="psiPlot"></svg>
         </div>
-        <div class="metric-card" title="S_k is the demo's low-k structure-factor estimate: the average of S(k)=|sum_j exp(-i k.r_j)|^2/N over the first few small reciprocal wavevectors. It measures long-wavelength density fluctuations; smaller values indicate stronger suppression of large-scale density variation.">
-          <div class="metric-title"><div class="metric-title-left"><strong>S_k structure factor</strong><span class="info-dot" title="Low-k S_k averages the structure factor over the first few small Fourier modes. It is a finite-size proxy for long-wavelength density fluctuations, not a full radially averaged S(k) curve.">?</span><span id="sCurrent"></span></div><div class="scale-toggle"><label for="skScale">y</label><select id="skScale"><option value="linear">linear</option><option value="log">log</option></select></div></div>
+        <div class="metric-card" title="S(k) structure factor: finite-size proxy for long-wavelength density fluctuations, estimated from |sum_j exp(-i k.r_j)|^2/N over small reciprocal wavevectors. This panel is fixed to log-log axes.">
+          <div class="metric-title">
+            <span class="metric-heading"><strong>S(k) structure factor for low k</strong><span class="help-icon" title="Finite-size proxy for long-wavelength density fluctuations, estimated from |Σⱼ exp(-i k·rⱼ)|²/N over small reciprocal wavevectors. Lower small-k values indicate stronger suppression of large-scale density fluctuations.">?</span></span>
+            <div class="metric-title-left">
+              <span id="sCurrent"></span>
+              <span class="scale-note">log-log</span>
+            </div>
+          </div>
           <svg id="structurePlot"></svg>
         </div>
-        <div class="metric-card" style="grid-column: span 2;" title="Fractions of Voronoi cells with 5, 6, or 7 sides. Non-hexagonal cells are a simple topological-defect diagnostic.">
-          <div class="metric-title"><div class="metric-title-left"><strong>5/6/7-sided cell fractions</strong><span id="fracCurrent"></span></div><div class="scale-toggle"><label for="fractionScale">y</label><select id="fractionScale"><option value="linear">linear</option><option value="log">log</option></select></div></div>
+        <div class="metric-card" style="grid-column: span 2;" title="Fractions of Voronoi cells with 5, 6, or 7 sides. These bounded fractions are kept on a linear scale.">
+          <div class="metric-title">
+            <span class="metric-heading"><strong>5/6/7-sided cell fractions</strong><span class="help-icon" title="Fractions of Voronoi cells with 5, 6, or 7 sides. Non-six-sided cells act as topological defects relative to locally hexagonal coordination.">?</span></span>
+            <div class="metric-title-left">
+              <span id="fracCurrent"></span>
+              <span class="scale-note">linear</span>
+            </div>
+          </div>
           <svg id="fractionPlot"></svg>
           <div class="legend"><span><span class="swatch" style="background:#2563eb"></span>f5</span><span><span class="swatch" style="background:#111827"></span>f6</span><span><span class="swatch" style="background:#dc2626"></span>f7</span></div>
         </div>
@@ -388,7 +506,7 @@
     running: false,
     timer: null,
     rng: null,
-    lastPerturbedIndices: new Set()
+    lastPerturbed: new Set()
   };
 
   function mulberry32(seed) {
@@ -679,7 +797,7 @@
   }
 
   function perturbPoints(points, frame, step, opts, rng) {
-    if (!shouldPerturb(step, opts)) return {points, indices: []};
+    if (!shouldPerturb(step, opts)) return {points, perturbed: []};
     let candidates = candidateIndices(points, frame, opts);
     if (!candidates.length) candidates = d3.range(points.length);
     const m = Math.max(1, Math.floor(opts.proportion * candidates.length));
@@ -704,7 +822,7 @@
         out[idx].y = Math.min(1, Math.max(0, out[idx].y));
       }
     });
-    return {points: out, indices: shuffled};
+    return {points: out, perturbed: shuffled};
   }
 
   function drawPerturbation(amp, opts, rng) {
@@ -728,7 +846,7 @@
     const nextStep = state.step + 1;
     const perturbation = perturbPoints(next, currentFrame, nextStep, opts, state.rng);
     next = perturbation.points;
-    state.lastPerturbedIndices = new Set(perturbation.indices);
+    state.lastPerturbed = new Set(perturbation.perturbed);
     state.points = next;
     state.step = nextStep;
     state.frame = buildDiagram(state.points, opts);
@@ -742,7 +860,7 @@
       energy: frame.quantizerEnergy,
       msd: frame.msd,
       psi: frame.meanPsi,
-      Sk: frame.lowK,
+      S_k: frame.lowK,
       f5: frame.fractions.f5,
       f6: frame.fractions.f6,
       f7: frame.fractions.f7
@@ -783,12 +901,12 @@
       .attr('fill-opacity', opts.view === 'phase' ? 0.82 : 0.78);
 
     g.selectAll('circle.point')
-      .data(state.points.map((p, i) => ({...p, perturbed: state.lastPerturbedIndices && state.lastPerturbedIndices.has(i)})))
+      .data(state.points.map((p, i) => ({...p, index: i})))
       .join('circle')
-      .attr('class', d => d.perturbed ? 'point perturbed' : 'point')
+      .attr('class', d => state.lastPerturbed.has(d.index) ? 'point perturbed-point' : 'point')
       .attr('cx', d => d.x)
       .attr('cy', d => d.y)
-      .attr('r', d => (d.perturbed ? 5.0 : 3.0) / sceneSize);
+      .attr('r', d => state.lastPerturbed.has(d.index) ? 4.4 / sceneSize : 3.0 / sceneSize);
   }
 
   function formatMetric(x) {
@@ -803,11 +921,11 @@
     els.statN.textContent = String(state.points.length);
     els.statEnergy.textContent = m ? formatMetric(m.energy) : '-';
     els.statPsi.textContent = m ? formatMetric(m.psi) : '-';
-    els.statS.textContent = m ? formatMetric(m.Sk) : '-';
+    els.statS.textContent = m ? formatMetric(m.S_k) : '-';
     els.energyCurrent.textContent = m ? formatMetric(m.energy) : '';
     els.msdCurrent.textContent = m ? formatMetric(m.msd) : '';
     els.psiCurrent.textContent = m ? formatMetric(m.psi) : '';
-    els.sCurrent.textContent = m ? formatMetric(m.Sk) : '';
+    els.sCurrent.textContent = m ? formatMetric(m.S_k) : '';
     els.fracCurrent.textContent = m ? `f5=${m.f5.toFixed(2)}, f6=${m.f6.toFixed(2)}, f7=${m.f7.toFixed(2)}` : '';
   }
 
@@ -817,31 +935,56 @@
     const width = svgEl.clientWidth || 320;
     const height = svgEl.clientHeight || 150;
     const margin = {top: 8, right: 12, bottom: 24, left: 42};
-    const scaleMode = opts.scale || 'linear';
-    const data = state.metrics.filter(d => Number.isFinite(d[key]) && (scaleMode !== 'log' || d[key] > 0));
-    const xExtent = d3.extent(state.metrics, d => d.step);
-    const xDomain = (!Number.isFinite(xExtent[0]) || xExtent[0] === xExtent[1]) ? [0, Math.max(1, xExtent[1] || 1)] : xExtent;
-    const x = d3.scaleLinear().domain(xDomain).nice().range([margin.left, width - margin.right]);
-    const extent = d3.extent(data, d => d[key]);
-    let y0 = extent[0], y1 = extent[1];
-    if (!Number.isFinite(y0) || !Number.isFinite(y1)) { y0 = scaleMode === 'log' ? 1e-6 : 0; y1 = 1; }
-    if (scaleMode !== 'log' && opts.zeroBase) y0 = Math.min(0, y0);
-    if (scaleMode === 'log') {
-      y0 = Math.max(y0, 1e-12);
-      if (y1 <= y0) y1 = y0 * 10;
-    } else if (Math.abs(y1 - y0) < eps) { y0 -= 0.5; y1 += 0.5; }
-    const y = (scaleMode === 'log' ? d3.scaleLog() : d3.scaleLinear()).domain([y0, y1]).nice().range([height - margin.bottom, margin.top]);
+    const xScaleMode = opts.xScale || 'linear';
+    const yScaleMode = opts.yScale || 'linear';
+    const isPositive = d => Number.isFinite(d[key]) && d[key] > 0;
+    const data = state.metrics.filter(d => Number.isFinite(d[key]) && (xScaleMode !== 'log' || d.step > 0) && (yScaleMode !== 'log' || d[key] > 0));
+
     svg.attr('viewBox', `0 0 ${width} ${height}`);
+    if (!data.length) return;
+
+    let xDomain;
+    if (xScaleMode === 'log') {
+      const positiveSteps = data.map(d => d.step).filter(d => d > 0);
+      const x0 = d3.min(positiveSteps) || 1;
+      const x1 = d3.max(positiveSteps) || x0 * 10;
+      xDomain = x0 === x1 ? [Math.max(1e-6, x0 / 1.5), x1 * 1.5] : [x0, x1];
+    } else {
+      const xExtent = d3.extent(state.metrics, d => d.step);
+      xDomain = (!Number.isFinite(xExtent[0]) || xExtent[0] === xExtent[1]) ? [0, Math.max(1, xExtent[1] || 1)] : xExtent;
+    }
+    const x = xScaleMode === 'log'
+      ? d3.scaleLog().domain(xDomain).nice().range([margin.left, width - margin.right])
+      : d3.scaleLinear().domain(xDomain).nice().range([margin.left, width - margin.right]);
+
+    let yDomain;
+    if (yScaleMode === 'log') {
+      const positiveValues = state.metrics.filter(isPositive).map(d => d[key]);
+      const y0 = d3.min(positiveValues) || 1e-12;
+      const y1 = d3.max(positiveValues) || y0 * 10;
+      yDomain = y0 === y1 ? [Math.max(1e-12, y0 / 1.5), y1 * 1.5] : [y0, y1];
+    } else {
+      const extent = d3.extent(state.metrics.filter(d => Number.isFinite(d[key])), d => d[key]);
+      let y0 = extent[0], y1 = extent[1];
+      if (!Number.isFinite(y0) || !Number.isFinite(y1)) { y0 = 0; y1 = 1; }
+      if (opts.zeroBase) y0 = Math.min(0, y0);
+      if (Math.abs(y1 - y0) < eps) { y0 -= 0.5; y1 += 0.5; }
+      yDomain = [y0, y1];
+    }
+    const y = yScaleMode === 'log'
+      ? d3.scaleLog().domain(yDomain).nice().range([height - margin.bottom, margin.top])
+      : d3.scaleLinear().domain(yDomain).nice().range([height - margin.bottom, margin.top]);
+
     svg.append('g').attr('class', 'axis').attr('transform', `translate(0,${height - margin.bottom})`).call(d3.axisBottom(x).ticks(4));
     svg.append('g').attr('class', 'axis').attr('transform', `translate(${margin.left},0)`).call(d3.axisLeft(y).ticks(4));
-    const line = d3.line().defined(d => Number.isFinite(d[key]) && (scaleMode !== 'log' || d[key] > 0)).x(d => x(d.step)).y(d => y(d[key]));
+    const line = d3.line()
+      .defined(d => Number.isFinite(d[key]) && (xScaleMode !== 'log' || d.step > 0) && (yScaleMode !== 'log' || d[key] > 0))
+      .x(d => x(d.step))
+      .y(d => y(d[key]));
     svg.append('path').datum(state.metrics).attr('fill', 'none').attr('stroke', opts.stroke || '#0f766e').attr('stroke-width', 2).attr('d', line);
-    if (scaleMode === 'log' && data.length < state.metrics.length) {
-      svg.append('text').attr('x', width - margin.right).attr('y', margin.top + 10).attr('text-anchor', 'end').attr('fill', '#64748b').attr('font-size', 10).text('non-positive values omitted');
-    }
   }
 
-  function fractionPlot(svgEl, scaleMode = 'linear') {
+  function fractionPlot(svgEl) {
     const svg = d3.select(svgEl);
     svg.selectAll('*').remove();
     const width = svgEl.clientWidth || 640;
@@ -851,9 +994,7 @@
     const extent = d3.extent(state.metrics, d => d.step);
     const xDomain = extent[0] === extent[1] || !Number.isFinite(extent[0]) ? [0, 1] : extent;
     const x = d3.scaleLinear().domain(xDomain).nice().range([margin.left, width - margin.right]);
-    const positiveVals = state.metrics.flatMap(d => [d.f5, d.f6, d.f7]).filter(v => Number.isFinite(v) && v > 0);
-    const ymin = scaleMode === 'log' ? Math.max(1e-4, d3.min(positiveVals) || 1e-4) : 0;
-    const y = (scaleMode === 'log' ? d3.scaleLog() : d3.scaleLinear()).domain([ymin, 1]).range([height - margin.bottom, margin.top]);
+    const y = d3.scaleLinear().domain([0, 1]).range([height - margin.bottom, margin.top]);
     svg.append('g').attr('class', 'axis').attr('transform', `translate(0,${height - margin.bottom})`).call(d3.axisBottom(x).ticks(5));
     svg.append('g').attr('class', 'axis').attr('transform', `translate(${margin.left},0)`).call(d3.axisLeft(y).ticks(4));
     const series = [
@@ -862,17 +1003,17 @@
       {key: 'f7', stroke: '#dc2626'}
     ];
     for (const s of series) {
-      const line = d3.line().defined(d => Number.isFinite(d[s.key]) && (scaleMode !== 'log' || d[s.key] > 0)).x(d => x(d.step)).y(d => y(d[s.key]));
+      const line = d3.line().x(d => x(d.step)).y(d => y(d[s.key]));
       svg.append('path').datum(state.metrics).attr('fill', 'none').attr('stroke', s.stroke).attr('stroke-width', 2).attr('d', line);
     }
   }
 
   function renderPlots() {
-    linePlot(els.energyPlot, 'energy', {stroke: '#0f766e', zeroBase: false, scale: els.energyScale.value});
-    linePlot(els.msdPlot, 'msd', {stroke: '#7c3aed', zeroBase: true, scale: els.msdScale.value});
-    linePlot(els.psiPlot, 'psi', {stroke: '#0369a1', zeroBase: true, scale: els.psiScale.value});
-    linePlot(els.structurePlot, 'Sk', {stroke: '#b45309', zeroBase: true, scale: els.skScale.value});
-    fractionPlot(els.fractionPlot, els.fractionScale.value);
+    linePlot(els.energyPlot, 'energy', {stroke: '#0f766e', zeroBase: false, yScale: els.energyYScale.value});
+    linePlot(els.msdPlot, 'msd', {stroke: '#7c3aed', zeroBase: true, yScale: els.msdYScale.value});
+    linePlot(els.psiPlot, 'psi', {stroke: '#0369a1', zeroBase: true, yScale: 'linear'});
+    linePlot(els.structurePlot, 'S_k', {stroke: '#b45309', xScale: 'log', yScale: 'log'});
+    fractionPlot(els.fractionPlot);
   }
 
   function renderAll() {
@@ -889,7 +1030,7 @@
     state.points = initialPoints(opts);
     state.step = 0;
     state.metrics = [];
-    state.lastPerturbedIndices = new Set();
+    state.lastPerturbed = new Set();
     state.frame = buildDiagram(state.points, opts);
     recordMetric(state.frame);
     renderAll();
@@ -918,13 +1059,14 @@
 
   function resetMetrics() {
     state.metrics = [];
+    state.lastPerturbed = new Set();
     if (!state.frame) state.frame = buildDiagram(state.points, currentOptions());
     recordMetric(state.frame);
     renderAll();
   }
 
   function downloadCsv() {
-    const headers = ['step', 'energy', 'msd', 'psi', 'Sk', 'f5', 'f6', 'f7'];
+    const headers = ['step', 'energy', 'msd', 'psi', 'S_k', 'f5', 'f6', 'f7'];
     const rows = [headers.join(',')].concat(state.metrics.map(m => headers.map(h => m[h]).join(',')));
     const blob = new Blob([rows.join('\n') + '\n'], {type: 'text/csv'});
     const url = URL.createObjectURL(blob);
@@ -943,11 +1085,11 @@
   for (const id of ['viewMode']) {
     els[id].addEventListener('change', renderAll);
   }
-  for (const id of ['energyScale', 'msdScale', 'psiScale', 'skScale', 'fractionScale']) {
-    els[id].addEventListener('change', renderPlots);
-  }
   for (const id of ['constraintMode']) {
     els[id].addEventListener('change', initialize);
+  }
+  for (const id of ['energyYScale', 'msdYScale']) {
+    els[id].addEventListener('change', renderPlots);
   }
   els.initialize.addEventListener('click', initialize);
   els.stepOnce.addEventListener('click', stepOnce);
