@@ -1,8 +1,8 @@
 ---
-title: "Geometry-driven hyperuniformity"
+title: "Geometry-driven complexity"
 ---
 
-This page will introduce my work on geometry-driven hyperuniformity.
+How can simple geometric interactions generate large-scale order?
 
 ## Interactive demo
 

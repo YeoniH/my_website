@@ -1,0 +1,5 @@
+---
+title: "Structural diagnostics for knowledge integrity"
+---
+
+How can we detect when knowledge structures remain coherent, robust, or trustworthy?

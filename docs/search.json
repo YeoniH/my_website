@@ -11,49 +11,28 @@
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "This page provides an overview of my research interests."
+    "text": "My research investigates how global patterns, behaviours, and meanings emerge from local interactions in complex systems. Beginning with my PhD work on geometry-driven hyperuniformity, I became interested in how simple generative rules can produce striking forms of collective order.\nMy current work extends this perspective to information systems, especially those mediated by generative AI, where feedback, adaptation, and communication shape how knowledge circulates and evolves.\nAcross these domains, topology provides a unifying lens: a way to identify structural signatures in high-dimensional systems and to develop diagnostics for robustness, information flow, and knowledge integrity."
   },
   {
     "objectID": "research.html#research-areas",
     "href": "research.html#research-areas",
     "title": "Research",
     "section": "Research areas",
-    "text": "Research areas\n\nGeometry-driven hyperuniformity\nTopological analysis for information flow\nSupervision"
+    "text": "Research areas\n\nGeometry-driven complexity\nInformation dynamics in human–AI systems\nStructural diagnostics for knowledge integrity"
   },
   {
-    "objectID": "research/topological-analysis-information-flow.html",
-    "href": "research/topological-analysis-information-flow.html",
-    "title": "Topological analysis for information flow",
+    "objectID": "research/supervision.html",
+    "href": "research/supervision.html",
+    "title": "Supervision",
     "section": "",
-    "text": "This page will introduce my work on topological data analysis, information flow, and hidden structure in complex systems."
+    "text": "This page will outline my supervision interests, current projects, and prospective student information."
   },
   {
-    "objectID": "engagements/future/example-future-event.html",
-    "href": "engagements/future/example-future-event.html",
-    "title": "Example future event",
+    "objectID": "research/information-dynamics.html",
+    "href": "research/information-dynamics.html",
+    "title": "Information dynamics in human–AI systems",
     "section": "",
-    "text": "Add the full event details here."
-  },
-  {
-    "objectID": "engagements/future/example-future-event.html#details",
-    "href": "engagements/future/example-future-event.html#details",
-    "title": "Example future event",
-    "section": "Details",
-    "text": "Details\n\nRole: Speaker / panellist / facilitator\nHost: Organisation name\nLocation: City or online\nLinks: Slides, recording, event page"
-  },
-  {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "This page will list publications, preprints, and selected outputs."
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "This page will provide contact details and links."
+    "text": "How does information evolve when humans and AI systems participate in feedback loops?"
   },
   {
     "objectID": "engagements/past/example-past-event.html",
@@ -70,25 +49,53 @@
     "text": "Details\n\nRole: Speaker / panellist / facilitator\nHost: Organisation name\nLocation: City or online\nLinks: Slides, recording, event page"
   },
   {
-    "objectID": "research/geometry-driven-hyperuniformity.html",
-    "href": "research/geometry-driven-hyperuniformity.html",
-    "title": "Geometry-driven hyperuniformity",
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
     "section": "",
-    "text": "This page will introduce my work on geometry-driven hyperuniformity."
+    "text": "This page will provide contact details and links."
   },
   {
-    "objectID": "research/geometry-driven-hyperuniformity.html#interactive-demo",
-    "href": "research/geometry-driven-hyperuniformity.html#interactive-demo",
-    "title": "Geometry-driven hyperuniformity",
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "This page will list publications, preprints, and selected outputs."
+  },
+  {
+    "objectID": "engagements/future/example-future-event.html",
+    "href": "engagements/future/example-future-event.html",
+    "title": "Example future event",
+    "section": "",
+    "text": "Add the full event details here."
+  },
+  {
+    "objectID": "engagements/future/example-future-event.html#details",
+    "href": "engagements/future/example-future-event.html#details",
+    "title": "Example future event",
+    "section": "Details",
+    "text": "Details\n\nRole: Speaker / panellist / facilitator\nHost: Organisation name\nLocation: City or online\nLinks: Slides, recording, event page"
+  },
+  {
+    "objectID": "research/knowledge-integrity.html",
+    "href": "research/knowledge-integrity.html",
+    "title": "Structural diagnostics for knowledge integrity",
+    "section": "",
+    "text": "How can we detect when knowledge structures remain coherent, robust, or trustworthy?"
+  },
+  {
+    "objectID": "research/hyperuniformity.html",
+    "href": "research/hyperuniformity.html",
+    "title": "Geometry-driven complexity",
+    "section": "",
+    "text": "How can simple geometric interactions generate large-scale order?"
+  },
+  {
+    "objectID": "research/hyperuniformity.html#interactive-demo",
+    "href": "research/hyperuniformity.html#interactive-demo",
+    "title": "Geometry-driven complexity",
     "section": "Interactive demo",
     "text": "Interactive demo\nLaunch interactive demo"
-  },
-  {
-    "objectID": "research/supervision.html",
-    "href": "research/supervision.html",
-    "title": "Supervision",
-    "section": "",
-    "text": "This page will outline my supervision interests, current projects, and prospective student information."
   },
   {
     "objectID": "engagements.html",
@@ -116,6 +123,6 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "Transdisciplinary researcher and educator.\nMy work sits at the intersection of:\n\nCybernetics & Complexity\nHuman × AI\nTopological Data Analysis\n\nI am interested in how patterns, behaviours, and meaning emerge in complex systems, and in developing conceptual and practical tools that help people navigate technological futures with clarity and care."
+    "text": "Transdisciplinary researcher and educator.\nMy research sits at the intersection of topology, complexity science, cybernetics, and information dynamics. I study how structure emerges, evolves, and sometimes degrades in systems composed of many interacting parts—from geometric point patterns to human–AI communication systems and knowledge infrastructures.\nAcross these projects, I use topology not only as a mathematical toolkit, but as a way of seeing: a means of identifying shapes, holes, flows, and structural signatures that reveal how local interactions give rise to global phenomena."
   }
 ]

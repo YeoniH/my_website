@@ -49,5 +49,14 @@
   },
   "interactive_lloyd/index.qmd": {
     "index.html": "c292035a"
+  },
+  "research/information-dynamics.qmd": {
+    "information-dynamics.html": "3a94d690"
+  },
+  "research/knowledge-integrity.qmd": {
+    "knowledge-integrity.html": "4ec4470d"
+  },
+  "research/hyperuniformity.qmd": {
+    "hyperuniformity.html": "bfde95ae"
   }
 }

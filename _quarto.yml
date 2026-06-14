@@ -14,12 +14,12 @@ website:
         menu:
           - text: Overview
             href: research.qmd
-          - text: Geometry-driven hyperuniformity
-            href: research/geometry-driven-hyperuniformity.qmd
-          - text: Topological analysis for information flow
-            href: research/topological-analysis-information-flow.qmd
-          - text: Supervision
-            href: research/supervision.qmd
+          - text: Geometry-driven complexity
+            href: research/hyperuniformity.qmd
+          - text: Information dynamics in human–AI systems
+            href: research/information-dynamics.qmd
+          - text: Structural diagnostics for knowledge integrity
+            href: research/knowledge-integrity.qmd
       - text: Education
         href: education.qmd
       - text: Engagements

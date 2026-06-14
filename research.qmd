@@ -2,10 +2,15 @@
 title: "Research"
 ---
 
-This page provides an overview of my research interests.
+My research investigates how global patterns, behaviours, and meanings emerge from local interactions in complex systems. Beginning with my PhD work on geometry-driven hyperuniformity, I became interested in how simple generative rules can produce striking forms of collective order. 
+
+My current work extends this perspective to information systems, especially those mediated by generative AI, where feedback, adaptation, and communication shape how knowledge circulates and evolves. 
+
+Across these domains, topology provides a unifying lens: a way to identify structural signatures in high-dimensional systems and to develop diagnostics for robustness, information flow, and knowledge integrity.
+
 
 ## Research areas
 
-- [Geometry-driven hyperuniformity](research/geometry-driven-hyperuniformity.qmd)
-- [Topological analysis for information flow](research/topological-analysis-information-flow.qmd)
-- [Supervision](research/supervision.qmd)
+- [Geometry-driven complexity](research/hyperuniformity.qmd)
+- [Information dynamics in human–AI systems](research/information-dynamics.qmd)
+- [Structural diagnostics for knowledge integrity](research/knowledge-integrity.qmd)

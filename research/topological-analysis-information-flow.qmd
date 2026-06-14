@@ -1,5 +1,0 @@
----
-title: "Topological analysis for information flow"
----
-
-This page will introduce my work on topological data analysis, information flow, and hidden structure in complex systems.

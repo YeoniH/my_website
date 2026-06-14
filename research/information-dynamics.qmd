@@ -1,0 +1,5 @@
+---
+title: "Information dynamics in human–AI systems"
+---
+
+How does information evolve when humans and AI systems participate in feedback loops?

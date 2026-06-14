@@ -4,10 +4,6 @@ title: "Home"
 
 Transdisciplinary researcher and educator.
 
-My work sits at the intersection of:
+My research sits at the intersection of topology, complexity science, cybernetics, and information dynamics. I study how structure emerges, evolves, and sometimes degrades in systems composed of many interacting parts—from geometric point patterns to human–AI communication systems and knowledge infrastructures.
 
-- Cybernetics & Complexity
-- Human × AI
-- Topological Data Analysis
-
-I am interested in how patterns, behaviours, and meaning emerge in complex systems, and in developing conceptual and practical tools that help people navigate technological futures with clarity and care.
+Across these projects, I use topology not only as a mathematical toolkit, but as a way of seeing: a means of identifying shapes, holes, flows, and structural signatures that reveal how local interactions give rise to global phenomena.
