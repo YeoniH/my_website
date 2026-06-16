@@ -1,0 +1,16 @@
+---
+pagetitle: "Interactive persistent homology demo"
+page-layout: full
+format:
+  html:
+    toc: false
+---
+
+```{=html}
+<iframe
+  src="persistent_homology_demo_app.html"
+  title="Interactive persistent homology demo"
+  style="width: 100%; height: 1320px; border: 0; border-radius: 12px; overflow: hidden;"
+  loading="lazy">
+</iframe>
+```

@@ -1,0 +1,1285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interactive persistent homology demo</title>
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<style>
+  :root {
+    --bg: #f8fafc;
+    --panel: #ffffff;
+    --ink: #111827;
+    --muted: #64748b;
+    --line: #d1d5db;
+    --soft-line: #e5e7eb;
+    --accent: #426b73;
+    --accent-soft: #e7f0f1;
+    --orange: #f59e0b;
+    --magenta: #d946ef;
+    --blue: #2563eb;
+    --red: #ef4444;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.45;
+  }
+
+  .app {
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 18px;
+  }
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    margin: 0 0 4px;
+    font-size: clamp(1.35rem, 2.4vw, 2rem);
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    max-width: 1020px;
+    color: var(--muted);
+    font-size: 0.96rem;
+  }
+
+  .controls {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .control {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 10px;
+    min-height: 76px;
+  }
+
+  .control.buttons {
+    grid-column: span 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+
+  label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 5px;
+  }
+
+  input[type="number"], select {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 7px 8px;
+    background: #fff;
+    color: var(--ink);
+  }
+
+  input[type="checkbox"] {
+    transform: translateY(1px);
+    margin-right: 6px;
+  }
+
+  button {
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: white;
+    color: var(--ink);
+    padding: 8px 11px;
+    cursor: pointer;
+    font-weight: 650;
+  }
+
+  button.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  button:hover { filter: brightness(0.97); }
+
+  .info-dot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+    border-radius: 50%;
+    border: 1px solid #94a3b8;
+    color: #475569;
+    font-size: 0.7rem;
+    font-weight: 800;
+    cursor: help;
+    vertical-align: 1px;
+  }
+
+  .status {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .stat {
+    background: var(--panel);
+    border: 1px solid var(--soft-line);
+    border-radius: 12px;
+    padding: 8px 10px;
+  }
+
+  .stat b {
+    display: block;
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .stat span {
+    font-weight: 750;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: minmax(420px, 1fr) minmax(420px, 1fr);
+    gap: 14px;
+  }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px;
+    min-width: 0;
+  }
+
+  .panel-title {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 8px;
+    color: var(--muted);
+    font-size: 0.86rem;
+  }
+
+  .panel-title strong {
+    color: var(--ink);
+    font-size: 0.94rem;
+  }
+
+  .panel-title .right-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+
+  svg {
+    width: 100%;
+    display: block;
+    background: #fff;
+    border: 1px solid var(--soft-line);
+    border-radius: 10px;
+  }
+
+  #cloud, #diagram {
+    aspect-ratio: 1 / 1;
+  }
+
+  .slider-panel {
+    margin-top: 14px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px;
+  }
+
+  .slider-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+  }
+
+  input[type="range"] {
+    width: 100%;
+  }
+
+  .note {
+    color: var(--muted);
+    font-size: 0.84rem;
+    margin-top: 8px;
+  }
+
+  .axis path, .axis line {
+    stroke: #cbd5e1;
+  }
+
+  .axis text {
+    fill: #64748b;
+    font-size: 11px;
+  }
+
+  .axis-label {
+    fill: #475569;
+    font-size: 12px;
+    font-weight: 650;
+  }
+
+  .legend {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  .swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: -1px;
+  }
+
+  .jump-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .jump-buttons button {
+    white-space: nowrap;
+  }
+
+  @media (max-width: 1120px) {
+    .controls { grid-template-columns: repeat(3, minmax(150px, 1fr)); }
+    .main { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 720px) {
+    .controls, .status { grid-template-columns: 1fr; }
+    .control.buttons { grid-column: span 1; }
+    .slider-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div>
+      <h1>Persistent homology from growing balls</h1>
+      <div class="subtitle">
+        A browser-scale demonstrator for computing persistent homology of a 2D point pattern through growing balls.
+        Choose between Čech and Vietoris--Rips filtrations, grow the scale parameter <em>r</em>, and watch the corresponding persistence diagram update on the right.
+      </div>
+    </div>
+  </header>
+
+  <section class="controls" aria-label="demo controls">
+    <div class="control">
+      <label for="nPoints">
+        Number of points
+        <span class="info-dot" title="Maximum 60 points. The browser computes all vertices, edges, and triangles, so the cost grows quickly with N.">?</span>
+      </label>
+      <input id="nPoints" type="number" min="6" max="60" step="1" value="28">
+      <div class="note">max 60</div>
+    </div>
+
+    <div class="control">
+      <label for="patternType">
+        Point pattern type
+        <span class="info-dot" title="Choose a point pattern. Circle, annulus, and figure-eight patterns are useful for seeing one-dimensional loops. Star gives a wavy one-cycle pattern; annulus gives two concentric circles.">?</span>
+      </label>
+      <select id="patternType">
+        <option value="random">Random</option>
+        <option value="circle" selected>Circle</option>
+        <option value="two-circles">Two circles</option>
+        <option value="grid">Regular grid</option>
+        <option value="star">Star</option>
+        <option value="annulus">Annulus</option>
+        <option value="spiral">Spiral</option>
+        <option value="figure-eight">Figure eight</option>
+      </select>
+    </div>
+
+    <div class="control">
+      <label for="filtrationType">
+        Filtration type
+        <span class="info-dot" title="Čech uses the true common-intersection radius for triples of balls, so it matches the union-of-balls nerve. Vietoris--Rips fills a triangle as soon as all three pairwise balls overlap, so it is often easier to compute but can fill loops earlier.">?</span>
+      </label>
+      <select id="filtrationType">
+        <option value="cech" selected>Čech filtration</option>
+        <option value="rips">Vietoris--Rips filtration</option>
+      </select>
+    </div>
+
+    <div class="control">
+      <label>
+        Noise added
+        <span class="info-dot" title="If checked, the point pattern is perturbed. Press Initialise again to add a small additional perturbation to the current pattern.">?</span>
+      </label>
+      <label style="font-size:0.92rem;color:var(--ink);margin-top:10px;">
+        <input id="noiseToggle" type="checkbox"> True
+      </label>
+    </div>
+
+    <div class="control">
+      <label for="homologyDim">
+        Homology dimension
+        <span class="info-dot" title="Choose which persistence diagram to display. H0 records connected components; H1 records loops.">?</span>
+      </label>
+      <select id="homologyDim">
+        <option value="0">H0: connected components</option>
+        <option value="1" selected>H1: loops</option>
+      </select>
+    </div>
+
+    <div class="control buttons">
+      <button id="initialize" class="primary">Initialise</button>
+      <button id="resetZoom">Reset PD zoom</button>
+    </div>
+  </section>
+
+  <section class="status" aria-label="status">
+    <div class="stat">
+      <b>radius r <span class="info-dot" title="The current scale parameter. On the left, each point has a ball of radius r; on the right, dashed guide lines show the same value in the persistence diagram.">?</span></b>
+      <span id="statR">0.000</span>
+    </div>
+    <div class="stat">
+      <b>simplices <span class="info-dot" title="The number of vertices (V), edges (E), and triangles (T) considered in the filtered simplicial complex.">?</span></b>
+      <span id="statSimplices">-</span>
+    </div>
+    <div class="stat">
+      <b>active generators <span class="info-dot" title="Features whose birth radius is at or below the current r and whose death radius is still above it. These are the topological features alive at the current scale.">?</span></b>
+      <span id="statActive">-</span>
+    </div>
+    <div class="stat">
+      <b>highlight <span class="info-dot" title="The currently highlighted connected component or loop, chosen automatically or by hovering over a persistence-diagram point.">?</span></b>
+      <span id="statHighlight">-</span>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="panel">
+      <div class="panel-title">
+        <strong>Point cloud and growing balls</strong>
+        <span>
+          <span class="info-dot" title="Grey circles are balls of radius r. Grey edges appear when two balls intersect. A selected loop or component is highlighted when it is active at the current radius.">?</span>
+        </span>
+      </div>
+      <svg id="cloud" viewBox="0 0 700 700" role="img" aria-label="Point cloud with growing balls"></svg>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">
+        <strong>Persistence diagram</strong>
+        <span class="right-tools">
+          <span class="info-dot" title="Each point has coordinates (birth, death). Features above the diagonal persist for longer. The dashed lines show the current radius r. Hover over a PD point to inspect and highlight its representative, when active.">?</span>
+        </span>
+      </div>
+      <svg id="diagram" viewBox="0 0 700 700" role="img" aria-label="Persistence diagram"></svg>
+    </div>
+  </section>
+
+  <section class="slider-panel">
+    <div class="slider-row">
+      <div>
+        <label for="radiusSlider">
+          Scale parameter r
+          <span class="info-dot" title="Drag the slider to grow the balls. Edges appear when balls intersect; triangles appear according to the selected filtration. The diagram updates to show active features at this scale.">?</span>
+        </label>
+        <input id="radiusSlider" type="range" min="0" max="0.5" step="0.002" value="0">
+      </div>
+      <div class="jump-buttons">
+        <button id="previousBirth">Jump to previous birth</button>
+        <button id="nextBirth">Jump to next birth</button>
+      </div>
+    </div>
+    <div class="note" id="filtrationNote">
+      Computational note: Čech and Vietoris--Rips have the same edge birth time in this radius convention, but differ for triangles. Čech uses the smallest ball radius for a true triple intersection; Vietoris--Rips fills a triangle once all three pairwise overlaps exist.
+    </div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const MAX_POINTS = 60;
+  const sceneSize = 700;
+  const pad = 48;
+  const plotSize = sceneSize - 2 * pad;
+  const eps = 1e-9;
+
+  const els = Object.fromEntries(Array.from(document.querySelectorAll("[id]")).map(el => [el.id, el]));
+
+  const state = {
+    points: [],
+    baseKey: "",
+    edges: [],
+    triangles: [],
+    intervals: {0: [], 1: []},
+    simplices: [],
+    r: 0,
+    maxR: 0.5,
+    pdZoom: 1,
+    hoverFeature: null,
+    currentFeature: null,
+    birthTol: 0.01
+  };
+
+  function clamp(x, lo = 0.06, hi = 0.94) {
+    return Math.max(lo, Math.min(hi, x));
+  }
+
+  function gaussian() {
+    let u = 0, v = 0;
+    while (u === 0) u = Math.random();
+    while (v === 0) v = Math.random();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  }
+
+  function dist(a, b) {
+    return Math.hypot(a.x - b.x, a.y - b.y);
+  }
+
+  function pointPattern(n, type) {
+    const pts = [];
+    const cx = 0.5, cy = 0.5;
+
+    if (type === "random") {
+      for (let i = 0; i < n; i++) {
+        pts.push({x: 0.1 + 0.8 * Math.random(), y: 0.1 + 0.8 * Math.random()});
+      }
+      return pts;
+    }
+
+    if (type === "circle") {
+      const r = 0.32;
+      for (let i = 0; i < n; i++) {
+        const t = 2 * Math.PI * i / n;
+        pts.push({x: cx + r * Math.cos(t), y: cy + r * Math.sin(t)});
+      }
+      return pts;
+    }
+
+    if (type === "two-circles") {
+      const n1 = Math.ceil(n / 2);
+      const n2 = n - n1;
+      const r = 0.17;
+      for (let i = 0; i < n1; i++) {
+        const t = 2 * Math.PI * i / n1;
+        pts.push({x: 0.34 + r * Math.cos(t), y: cy + r * Math.sin(t)});
+      }
+      for (let i = 0; i < n2; i++) {
+        const t = 2 * Math.PI * i / Math.max(1, n2);
+        pts.push({x: 0.66 + r * Math.cos(t), y: cy + r * Math.sin(t)});
+      }
+      return pts;
+    }
+
+    if (type === "grid") {
+      const cols = Math.ceil(Math.sqrt(n));
+      const rows = Math.ceil(n / cols);
+      for (let r = 0; r < rows && pts.length < n; r++) {
+        for (let c = 0; c < cols && pts.length < n; c++) {
+          pts.push({
+            x: 0.16 + 0.68 * (cols === 1 ? 0.5 : c / (cols - 1)),
+            y: 0.16 + 0.68 * (rows === 1 ? 0.5 : r / (rows - 1))
+          });
+        }
+      }
+      return pts;
+    }
+
+    if (type === "star") {
+      for (let i = 0; i < n; i++) {
+        const t = 2 * Math.PI * i / n;
+        const radius = 0.28 + 0.055 * Math.sin(5 * t);
+        pts.push({x: cx + radius * Math.cos(t), y: cy + radius * Math.sin(t)});
+      }
+      return pts;
+    }
+
+    if (type === "annulus") {
+      const nOuter = Math.ceil(0.58 * n);
+      const nInner = n - nOuter;
+      const rOuter = 0.34;
+      const rInner = 0.19;
+      for (let i = 0; i < nOuter; i++) {
+        const t = 2 * Math.PI * i / nOuter;
+        pts.push({x: cx + rOuter * Math.cos(t), y: cy + rOuter * Math.sin(t)});
+      }
+      for (let i = 0; i < nInner; i++) {
+        const t = 2 * Math.PI * (i + 0.5) / Math.max(1, nInner);
+        pts.push({x: cx + rInner * Math.cos(t), y: cy + rInner * Math.sin(t)});
+      }
+      return pts;
+    }
+
+    if (type === "spiral") {
+      const turns = 2.25;
+      for (let i = 0; i < n; i++) {
+        const u = n === 1 ? 0 : i / (n - 1);
+        const t = 0.5 + turns * 2 * Math.PI * u;
+        const radius = 0.055 + 0.36 * u;
+        pts.push({x: cx + radius * Math.cos(t), y: cy + radius * Math.sin(t)});
+      }
+      return pts;
+    }
+
+    if (type === "figure-eight") {
+      for (let i = 0; i < n; i++) {
+        const t = 2 * Math.PI * i / n;
+        pts.push({
+          x: cx + 0.34 * Math.sin(t),
+          y: cy + 0.27 * Math.sin(t) * Math.cos(t)
+        });
+      }
+      return pts;
+    }
+
+    return pointPattern(n, "circle");
+  }
+
+  function perturbPoints(points, amplitude = 0.025) {
+    return points.map(p => ({
+      x: clamp(p.x + amplitude * gaussian()),
+      y: clamp(p.y + amplitude * gaussian())
+    }));
+  }
+
+  function simplexId(dim, verts) {
+    return `${dim}:${verts.join(",")}`;
+  }
+
+  function triangleRadius(p, q, r) {
+    const a = dist(q, r);
+    const b = dist(p, r);
+    const c = dist(p, q);
+    const sides = [a, b, c].sort((x, y) => x - y);
+    const L = sides[2], s1 = sides[0], s2 = sides[1];
+    const area2 = Math.abs((q.x - p.x) * (r.y - p.y) - (q.y - p.y) * (r.x - p.x));
+    if (area2 < eps) return L / 2;
+    if (L * L >= s1 * s1 + s2 * s2 - 1e-12) return L / 2;
+    const area = area2 / 2;
+    return (a * b * c) / (4 * area);
+  }
+
+  function maxSet(s) {
+    let out = -1;
+    for (const x of s) if (x > out) out = x;
+    return out;
+  }
+
+  function symDiffInto(a, b) {
+    for (const x of b) {
+      if (a.has(x)) a.delete(x);
+      else a.add(x);
+    }
+  }
+
+  function computePersistence(points, filtration = "cech") {
+    const n = points.length;
+    const simplices = [];
+    const edges = [];
+    const triangles = [];
+
+    for (let i = 0; i < n; i++) {
+      simplices.push({dim: 0, f: 0, verts: [i], id: simplexId(0, [i]), faceIds: []});
+    }
+
+    for (let i = 0; i < n; i++) {
+      for (let j = i + 1; j < n; j++) {
+        const f = dist(points[i], points[j]) / 2;
+        const verts = [i, j];
+        const id = simplexId(1, verts);
+        const edge = {i, j, f, id};
+        edges.push(edge);
+        simplices.push({
+          dim: 1,
+          f,
+          verts,
+          id,
+          faceIds: [simplexId(0, [i]), simplexId(0, [j])]
+        });
+      }
+    }
+
+    for (let i = 0; i < n; i++) {
+      for (let j = i + 1; j < n; j++) {
+        for (let k = j + 1; k < n; k++) {
+          const cechRadius = triangleRadius(points[i], points[j], points[k]);
+          const ripsRadius = Math.max(
+            dist(points[i], points[j]),
+            dist(points[i], points[k]),
+            dist(points[j], points[k])
+          ) / 2;
+          const f = filtration === "rips" ? ripsRadius : cechRadius;
+          const verts = [i, j, k];
+          const id = simplexId(2, verts);
+          triangles.push({i, j, k, f, id});
+          simplices.push({
+            dim: 2,
+            f,
+            verts,
+            id,
+            faceIds: [
+              simplexId(1, [i, j]),
+              simplexId(1, [i, k]),
+              simplexId(1, [j, k])
+            ]
+          });
+        }
+      }
+    }
+
+    simplices.sort((a, b) => {
+      if (Math.abs(a.f - b.f) > eps) return a.f - b.f;
+      if (a.dim !== b.dim) return a.dim - b.dim;
+      return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
+    });
+
+    const indexById = new Map();
+    simplices.forEach((s, idx) => {
+      s.index = idx;
+      indexById.set(s.id, idx);
+    });
+
+    simplices.forEach(s => {
+      s.boundary = s.faceIds.map(id => indexById.get(id)).filter(x => x !== undefined).sort((a, b) => a - b);
+    });
+
+    const lowToCol = new Map();
+    const reduced = new Array(simplices.length);
+    const chains = new Array(simplices.length);
+    const creators = new Map();
+    const pairs = {0: [], 1: []};
+    let idCounter = 0;
+
+    for (let j = 0; j < simplices.length; j++) {
+      const sj = simplices[j];
+      let col = new Set(sj.boundary);
+      let chain = new Set([j]);
+
+      while (col.size > 0) {
+        const low = maxSet(col);
+        if (!lowToCol.has(low)) break;
+        const k = lowToCol.get(low);
+        symDiffInto(col, reduced[k]);
+        symDiffInto(chain, chains[k]);
+      }
+
+      if (col.size === 0) {
+        if (sj.dim === 0) {
+          creators.set(j, {
+            dim: 0,
+            birth: sj.f,
+            vertex: sj.verts[0],
+            paired: false
+          });
+        } else if (sj.dim === 1) {
+          const edgeSimplexIndices = Array.from(chain).filter(idx => simplices[idx].dim === 1);
+          const cycleEdges = edgeSimplexIndices.map(idx => simplices[idx].verts.slice());
+          creators.set(j, {
+            dim: 1,
+            birth: sj.f,
+            cycleEdges,
+            paired: false
+          });
+        }
+      } else {
+        const low = maxSet(col);
+        lowToCol.set(low, j);
+
+        const homDim = sj.dim - 1;
+        const creator = creators.get(low);
+
+        if (creator && homDim === 0 && creator.dim === 0) {
+          creator.paired = true;
+          const death = sj.f;
+          if (death > creator.birth + eps) {
+            pairs[0].push({
+              id: `H0-${idCounter++}`,
+              dim: 0,
+              birth: creator.birth,
+              death,
+              vertex: creator.vertex,
+              killerEdge: sj.verts.slice(),
+              persistence: death - creator.birth
+            });
+          }
+        }
+
+        if (creator && homDim === 1 && creator.dim === 1) {
+          creator.paired = true;
+          const death = sj.f;
+          if (death > creator.birth + eps) {
+            pairs[1].push({
+              id: `H1-${idCounter++}`,
+              dim: 1,
+              birth: creator.birth,
+              death,
+              cycleEdges: creator.cycleEdges,
+              killerTriangle: sj.verts.slice(),
+              persistence: death - creator.birth
+            });
+          }
+        }
+      }
+
+      reduced[j] = col;
+      chains[j] = chain;
+    }
+
+    pairs[0].sort((a, b) => b.persistence - a.persistence);
+    pairs[1].sort((a, b) => b.persistence - a.persistence);
+
+    return {simplices, edges, triangles, intervals: pairs};
+  }
+
+  class UnionFind {
+    constructor(n) {
+      this.parent = Array.from({length: n}, (_, i) => i);
+      this.size = Array(n).fill(1);
+    }
+    find(x) {
+      while (this.parent[x] !== x) {
+        this.parent[x] = this.parent[this.parent[x]];
+        x = this.parent[x];
+      }
+      return x;
+    }
+    union(a, b) {
+      let ra = this.find(a), rb = this.find(b);
+      if (ra === rb) return;
+      if (this.size[ra] < this.size[rb]) [ra, rb] = [rb, ra];
+      this.parent[rb] = ra;
+      this.size[ra] += this.size[rb];
+    }
+  }
+
+  function componentForVertex(vertex, r) {
+    const uf = new UnionFind(state.points.length);
+    for (const e of state.edges) {
+      if (e.f <= r + eps) uf.union(e.i, e.j);
+    }
+    const root = uf.find(vertex);
+    const members = [];
+    for (let i = 0; i < state.points.length; i++) {
+      if (uf.find(i) === root) members.push(i);
+    }
+    const memberSet = new Set(members);
+    const componentEdges = state.edges.filter(e => e.f <= r + eps && memberSet.has(e.i) && memberSet.has(e.j));
+    return {members, componentEdges};
+  }
+
+  function selectedDim() {
+    return Number(els.homologyDim.value);
+  }
+
+  function activeIntervals(dim) {
+    return state.intervals[dim].filter(d => d.birth <= state.r + eps && state.r < d.death - eps);
+  }
+
+  function chooseCurrentFeature() {
+    const dim = selectedDim();
+    const active = activeIntervals(dim);
+    if (!active.length) return null;
+
+    const born = active.filter(d => Math.abs(state.r - d.birth) <= state.birthTol);
+    const pool = born.length ? born : active;
+    return pool.slice().sort((a, b) => b.persistence - a.persistence)[0];
+  }
+
+  function highlightedFeature() {
+    if (state.hoverFeature && state.hoverFeature.birth <= state.r + eps && state.r < state.hoverFeature.death - eps) {
+      return state.hoverFeature;
+    }
+    return state.currentFeature;
+  }
+
+  function sx(p) { return pad + p.x * plotSize; }
+  function sy(p) { return pad + (1 - p.y) * plotSize; }
+
+  function renderCloud() {
+    const svg = d3.select(els.cloud);
+    svg.selectAll("*").remove();
+
+    const rPixels = state.r * plotSize;
+    const feature = highlightedFeature();
+    const nearBirth = feature && Math.abs(state.r - feature.birth) <= state.birthTol;
+
+    svg.append("rect")
+      .attr("x", pad).attr("y", pad)
+      .attr("width", plotSize).attr("height", plotSize)
+      .attr("fill", "#ffffff")
+      .attr("stroke", "#e5e7eb");
+
+    svg.append("g")
+      .selectAll("circle.ball")
+      .data(state.points)
+      .join("circle")
+      .attr("class", "ball")
+      .attr("cx", sx)
+      .attr("cy", sy)
+      .attr("r", rPixels)
+      .attr("fill", "#d1d5db")
+      .attr("fill-opacity", 0.24)
+      .attr("stroke", "#9ca3af")
+      .attr("stroke-opacity", 0.42)
+      .attr("stroke-width", 1);
+
+    const activeEdges = state.edges.filter(e => e.f <= state.r + eps);
+
+    svg.append("g")
+      .selectAll("line.edge")
+      .data(activeEdges)
+      .join("line")
+      .attr("x1", d => sx(state.points[d.i]))
+      .attr("y1", d => sy(state.points[d.i]))
+      .attr("x2", d => sx(state.points[d.j]))
+      .attr("y2", d => sy(state.points[d.j]))
+      .attr("stroke", "#9ca3af")
+      .attr("stroke-opacity", 0.42)
+      .attr("stroke-width", 1.15);
+
+    if (feature && feature.dim === 1 && feature.cycleEdges && feature.cycleEdges.length) {
+      svg.append("g")
+        .selectAll("line.cycle")
+        .data(feature.cycleEdges)
+        .join("line")
+        .attr("x1", d => sx(state.points[d[0]]))
+        .attr("y1", d => sy(state.points[d[0]]))
+        .attr("x2", d => sx(state.points[d[1]]))
+        .attr("y2", d => sy(state.points[d[1]]))
+        .attr("stroke", nearBirth ? "#ef4444" : "#64748b")
+        .attr("stroke-opacity", nearBirth ? 0.98 : 0.75)
+        .attr("stroke-width", nearBirth ? 5.2 : 3.4)
+        .attr("stroke-linecap", "round");
+    }
+
+    if (feature && feature.dim === 0) {
+      const comp = componentForVertex(feature.vertex, state.r);
+      svg.append("g")
+        .selectAll("line.component")
+        .data(comp.componentEdges)
+        .join("line")
+        .attr("x1", d => sx(state.points[d.i]))
+        .attr("y1", d => sy(state.points[d.i]))
+        .attr("x2", d => sx(state.points[d.j]))
+        .attr("y2", d => sy(state.points[d.j]))
+        .attr("stroke", nearBirth ? "#ef4444" : "#64748b")
+        .attr("stroke-opacity", nearBirth ? 0.98 : 0.78)
+        .attr("stroke-width", nearBirth ? 5.0 : 3.2)
+        .attr("stroke-linecap", "round");
+
+      svg.append("g")
+        .selectAll("circle.component-point")
+        .data(comp.members.map(i => state.points[i]))
+        .join("circle")
+        .attr("cx", sx)
+        .attr("cy", sy)
+        .attr("r", nearBirth ? 9 : 7)
+        .attr("fill", "none")
+        .attr("stroke", nearBirth ? "#ef4444" : "#2563eb")
+        .attr("stroke-opacity", 0.85)
+        .attr("stroke-width", 2.2);
+    }
+
+    svg.append("g")
+      .selectAll("circle.point")
+      .data(state.points)
+      .join("circle")
+      .attr("class", "point")
+      .attr("cx", sx)
+      .attr("cy", sy)
+      .attr("r", 4.1)
+      .attr("fill", "#111827")
+      .attr("stroke", "#ffffff")
+      .attr("stroke-width", 1.1);
+
+    svg.append("text")
+      .attr("x", pad)
+      .attr("y", sceneSize - 18)
+      .attr("fill", "#64748b")
+      .attr("font-size", 13)
+      .text(`r = ${state.r.toFixed(3)}; edges active = ${activeEdges.length}`);
+  }
+
+  function diagramDomains(data) {
+    const vals = data.flatMap(d => [d.birth, d.death]).filter(Number.isFinite);
+    vals.push(state.r, state.maxR);
+    const maxVal = Math.max(0.05, ...vals);
+    const padVal = Math.max(0.015, 0.08 * maxVal);
+    const lo = -padVal;
+    const hi = maxVal + padVal;
+    const center = (lo + hi) / 2;
+    const span = (hi - lo) / state.pdZoom;
+    return [center - span / 2, center + span / 2];
+  }
+
+
+  function renderPDLegend(svg, x0, y0) {
+    const items = [
+      {label: "H0", color: "#f59e0b"},
+      {label: "H1", color: "#d946ef"},
+      {label: "active", color: "#2563eb"},
+      {label: "newborn", color: "#ef4444"}
+    ];
+
+    const g = svg.append("g")
+      .attr("transform", `translate(${x0},${y0})`)
+      .attr("aria-label", "persistence diagram legend");
+
+    g.append("rect")
+      .attr("width", 156)
+      .attr("height", 92)
+      .attr("rx", 10)
+      .attr("fill", "#ffffff")
+      .attr("fill-opacity", 0.88)
+      .attr("stroke", "#cbd5e1");
+
+    g.append("text")
+      .attr("x", 12)
+      .attr("y", 18)
+      .attr("fill", "#475569")
+      .attr("font-size", 11)
+      .attr("font-weight", 750)
+      .text("Legend");
+
+    const rows = g.selectAll("g.legend-row")
+      .data(items)
+      .join("g")
+      .attr("class", "legend-row")
+      .attr("transform", (d, i) => `translate(12,${34 + i * 13})`);
+
+    rows.append("circle")
+      .attr("cx", 5)
+      .attr("cy", -3)
+      .attr("r", 4.5)
+      .attr("fill", d => d.color)
+      .attr("fill-opacity", d => d.label === "active" ? 0.2 : 0.9)
+      .attr("stroke", d => d.label === "active" ? d.color : "#ffffff")
+      .attr("stroke-width", d => d.label === "active" ? 2.2 : 0.8);
+
+    rows.append("text")
+      .attr("x", 18)
+      .attr("y", 1)
+      .attr("fill", "#64748b")
+      .attr("font-size", 11)
+      .text(d => d.label);
+  }
+
+  function renderDiagram() {
+    const dim = selectedDim();
+    const data = state.intervals[dim];
+    const color = dim === 0 ? "#f59e0b" : "#d946ef";
+    const svg = d3.select(els.diagram);
+    svg.selectAll("*").remove();
+
+    const margin = {top: 36, right: 28, bottom: 62, left: 72};
+    const innerW = sceneSize - margin.left - margin.right;
+    const innerH = sceneSize - margin.top - margin.bottom;
+    const domain = diagramDomains(data);
+
+    const x = d3.scaleLinear().domain(domain).range([margin.left, margin.left + innerW]);
+    const y = d3.scaleLinear().domain(domain).range([margin.top + innerH, margin.top]);
+
+    svg.append("rect")
+      .attr("x", margin.left)
+      .attr("y", margin.top)
+      .attr("width", innerW)
+      .attr("height", innerH)
+      .attr("fill", "#ffffff")
+      .attr("stroke", "#e5e7eb");
+
+    svg.append("line")
+      .attr("x1", x(domain[0]))
+      .attr("y1", y(domain[0]))
+      .attr("x2", x(domain[1]))
+      .attr("y2", y(domain[1]))
+      .attr("stroke", "#94a3b8")
+      .attr("stroke-dasharray", "5,5")
+      .attr("stroke-width", 1.2);
+
+    if (state.r >= domain[0] && state.r <= domain[1]) {
+      svg.append("line")
+        .attr("x1", x(state.r)).attr("y1", margin.top)
+        .attr("x2", x(state.r)).attr("y2", margin.top + innerH)
+        .attr("stroke", "#2563eb")
+        .attr("stroke-dasharray", "3,4")
+        .attr("stroke-opacity", 0.5);
+
+      svg.append("line")
+        .attr("x1", margin.left).attr("y1", y(state.r))
+        .attr("x2", margin.left + innerW).attr("y2", y(state.r))
+        .attr("stroke", "#2563eb")
+        .attr("stroke-dasharray", "3,4")
+        .attr("stroke-opacity", 0.5);
+    }
+
+    svg.append("g")
+      .attr("class", "axis")
+      .attr("transform", `translate(0,${margin.top + innerH})`)
+      .call(d3.axisBottom(x).ticks(6));
+
+    svg.append("g")
+      .attr("class", "axis")
+      .attr("transform", `translate(${margin.left},0)`)
+      .call(d3.axisLeft(y).ticks(6));
+
+    svg.append("text")
+      .attr("class", "axis-label")
+      .attr("x", margin.left + innerW / 2)
+      .attr("y", sceneSize - 18)
+      .attr("text-anchor", "middle")
+      .text("birth radius");
+
+    svg.append("text")
+      .attr("class", "axis-label")
+      .attr("transform", `translate(22,${margin.top + innerH / 2}) rotate(-90)`)
+      .attr("text-anchor", "middle")
+      .text("death radius");
+
+    const active = new Set(activeIntervals(dim).map(d => d.id));
+    const highlighted = highlightedFeature();
+
+    const points = svg.append("g")
+      .selectAll("circle.pd-point")
+      .data(data, d => d.id)
+      .join("circle")
+      .attr("class", "pd-point")
+      .attr("cx", d => x(d.birth))
+      .attr("cy", d => y(d.death))
+      .attr("r", d => highlighted && highlighted.id === d.id ? 8 : 5.5)
+      .attr("fill", color)
+      .attr("fill-opacity", d => active.has(d.id) ? 0.9 : 0.32)
+      .attr("stroke", d => highlighted && highlighted.id === d.id ? "#2563eb" : (Math.abs(state.r - d.birth) <= state.birthTol && active.has(d.id) ? "#ef4444" : "#ffffff"))
+      .attr("stroke-width", d => highlighted && highlighted.id === d.id ? 3 : 1.4)
+      .style("cursor", "pointer")
+      .on("mouseenter", function(event, d) {
+        state.hoverFeature = d;
+        renderCloud();
+        updateStatus();
+        d3.select(this).attr("stroke", "#2563eb").attr("stroke-width", 3).attr("r", 8);
+      })
+      .on("mouseleave", function(event, d) {
+        state.hoverFeature = null;
+        renderAll();
+      });
+
+    points.append("title")
+      .text(d => `${dim === 0 ? "H0 component" : "H1 loop"}\nbirth: ${d.birth.toFixed(4)}\ndeath: ${d.death.toFixed(4)}\npersistence: ${d.persistence.toFixed(4)}`);
+
+    svg.append("text")
+      .attr("x", margin.left)
+      .attr("y", 20)
+      .attr("fill", "#64748b")
+      .attr("font-size", 13)
+      .text(`${dim === 0 ? "H0 connected components" : "H1 loops"} · ${data.length} finite intervals · zoom ${state.pdZoom.toFixed(1)}×`);
+
+    renderPDLegend(svg, margin.left + innerW - 168, margin.top + innerH - 104);
+
+    if (!data.length) {
+      svg.append("text")
+        .attr("x", margin.left + innerW / 2)
+        .attr("y", margin.top + innerH / 2)
+        .attr("text-anchor", "middle")
+        .attr("fill", "#64748b")
+        .attr("font-size", 15)
+        .text("No finite intervals for this homology dimension.");
+    }
+  }
+
+  function updateStatus() {
+    const dim = selectedDim();
+    const active = activeIntervals(dim);
+    const feature = highlightedFeature();
+
+    els.statR.textContent = state.r.toFixed(3);
+    els.statSimplices.textContent = `${state.points.length} V · ${state.edges.length} E · ${state.triangles.length} T`;
+    els.statActive.textContent = `${active.length} active ${dim === 0 ? "H0" : "H1"} generators`;
+
+    if (!feature) {
+      els.statHighlight.textContent = "-";
+      return;
+    }
+
+    const nearBirth = Math.abs(state.r - feature.birth) <= state.birthTol;
+    els.statHighlight.textContent = `${feature.dim === 0 ? "component" : "loop"} born at ${feature.birth.toFixed(3)}${nearBirth ? " · newborn" : ""}`;
+  }
+
+  function updateSlider() {
+    els.radiusSlider.max = state.maxR.toFixed(6);
+    els.radiusSlider.step = Math.max(state.maxR / 300, 0.0005).toFixed(6);
+    els.radiusSlider.value = state.r.toFixed(6);
+  }
+
+  function initialize() {
+    let n = Math.trunc(Number(els.nPoints.value));
+    if (!Number.isFinite(n)) n = 28;
+    n = Math.max(6, Math.min(MAX_POINTS, n));
+    els.nPoints.value = n;
+
+    const type = els.patternType.value;
+    const filtration = els.filtrationType.value;
+    const noise = els.noiseToggle.checked;
+    const key = `${n}:${type}`;
+
+    if (noise && state.points.length && state.baseKey === key) {
+      state.points = perturbPoints(state.points, 0.022);
+    } else {
+      state.points = pointPattern(n, type);
+      if (noise) state.points = perturbPoints(state.points, 0.022);
+      state.baseKey = key;
+    }
+
+    const result = computePersistence(state.points, filtration);
+    state.simplices = result.simplices;
+    state.edges = result.edges;
+    state.triangles = result.triangles;
+    state.intervals = result.intervals;
+
+    const allDeaths = [...state.intervals[0], ...state.intervals[1]].map(d => d.death);
+    const edgeMax = d3.max(state.edges, d => d.f) || 0.5;
+    const deathMax = d3.max(allDeaths) || edgeMax;
+    state.maxR = Math.max(0.08, Math.min(0.95, 1.12 * deathMax));
+    state.r = 0;
+    state.pdZoom = 1;
+    state.hoverFeature = null;
+    state.birthTol = Math.max(state.maxR / 80, 0.004);
+
+    updateSlider();
+    renderAll();
+  }
+
+  function recomputeCurrentFiltration() {
+    if (!state.points.length) {
+      initialize();
+      return;
+    }
+
+    const result = computePersistence(state.points, els.filtrationType.value);
+    state.simplices = result.simplices;
+    state.edges = result.edges;
+    state.triangles = result.triangles;
+    state.intervals = result.intervals;
+
+    const allDeaths = [...state.intervals[0], ...state.intervals[1]].map(d => d.death);
+    const edgeMax = d3.max(state.edges, d => d.f) || 0.5;
+    const deathMax = d3.max(allDeaths) || edgeMax;
+    state.maxR = Math.max(0.08, Math.min(0.95, 1.12 * deathMax));
+    state.r = Math.min(state.r, state.maxR);
+    state.pdZoom = 1;
+    state.hoverFeature = null;
+    state.birthTol = Math.max(state.maxR / 80, 0.004);
+
+    updateSlider();
+    renderAll();
+  }
+
+  function jumpToNextBirth() {
+    const dim = selectedDim();
+    const births = state.intervals[dim]
+      .map(d => d.birth)
+      .filter(b => b > state.r + state.birthTol * 0.5)
+      .sort((a, b) => a - b);
+
+    if (births.length) {
+      state.r = births[0];
+    } else {
+      state.r = 0;
+    }
+
+    updateSlider();
+    renderAll();
+  }
+
+  function jumpToPreviousBirth() {
+    const dim = selectedDim();
+    const births = state.intervals[dim]
+      .map(d => d.birth)
+      .filter(b => b < state.r - state.birthTol * 0.5)
+      .sort((a, b) => b - a);
+
+    if (births.length) {
+      state.r = births[0];
+    } else {
+      const allBirths = state.intervals[dim].map(d => d.birth).sort((a, b) => b - a);
+      state.r = allBirths.length ? allBirths[0] : 0;
+    }
+
+    updateSlider();
+    renderAll();
+  }
+
+  function renderAll() {
+    state.currentFeature = chooseCurrentFeature();
+    renderCloud();
+    renderDiagram();
+    updateStatus();
+  }
+
+  els.initialize.addEventListener("click", initialize);
+
+  els.radiusSlider.addEventListener("input", () => {
+    state.r = Number(els.radiusSlider.value);
+    renderAll();
+  });
+
+  els.homologyDim.addEventListener("change", () => {
+    state.hoverFeature = null;
+    state.pdZoom = 1;
+    renderAll();
+  });
+
+  els.filtrationType.addEventListener("change", recomputeCurrentFiltration);
+
+  els.resetZoom.addEventListener("click", () => {
+    state.pdZoom = 1;
+    renderDiagram();
+  });
+
+  els.previousBirth.addEventListener("click", jumpToPreviousBirth);
+  els.nextBirth.addEventListener("click", jumpToNextBirth);
+
+  // Mouse-wheel zoom for the persistence diagram.
+  els.diagram.addEventListener("wheel", event => {
+    event.preventDefault();
+    if (event.deltaY < 0) state.pdZoom = Math.min(8, state.pdZoom * 1.15);
+    else state.pdZoom = Math.max(1, state.pdZoom / 1.15);
+    renderDiagram();
+  }, {passive: false});
+
+  initialize();
+})();
+</script>
+</body>
+</html>

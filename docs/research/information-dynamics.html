@@ -109,10 +109,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../research/information-dynamics.html">
  <span class="dropdown-text">Information dynamics in human–AI systems</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../research/knowledge-integrity.html">
- <span class="dropdown-text">Structural diagnostics for knowledge integrity</span></a>
-  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -122,6 +118,10 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="../engagements.html"> 
 <span class="menu-text">Engagements</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../resources.html"> 
+<span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../faq.html"> 
@@ -150,158 +150,13 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<style>
-.research-subpage {
-  --research-accent: #426b73;
-  --research-accent-soft: #e7f0f1;
-  --research-ink: #1f2933;
-  --research-muted: #5f6f7a;
-  --research-line: #d7e1e4;
-  --research-bg: #ffffff;
-}
-
-.research-subpage-intro,
-.research-subpage-section {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 3.5rem 1.5rem;
-}
-
-.research-subpage-intro {
-  padding-top: 2rem;
-  padding-bottom: 2.5rem;
-}
-
-.research-kicker {
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.78rem;
-  color: var(--research-accent);
-  font-weight: 700;
-  margin-bottom: 0.9rem;
-}
-
-.research-title {
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  line-height: 0.98;
-  margin: 0 0 1.15rem;
-  color: var(--research-ink);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-}
-
-.research-lede {
-  max-width: 900px;
-  font-size: 1.12rem;
-  line-height: 1.75;
-  color: var(--research-ink);
-}
-
-.research-muted {
-  color: var(--research-muted);
-}
-
-.research-band {
-  background: #f7fafb;
-  border-top: 1px solid var(--research-line);
-  border-bottom: 1px solid var(--research-line);
-}
-
-.research-section-title {
-  font-size: clamp(1.6rem, 3vw, 2.3rem);
-  margin: 0 0 1.2rem;
-  color: var(--research-ink);
-}
-
-.research-subpage-section p,
-.research-subpage-section li {
-  line-height: 1.65;
-}
-
-.demo-button,
-.publication-links a {
-  font-weight: 650;
-  text-decoration: none;
-  color: var(--research-accent);
-}
-
-.demo-button {
-  display: inline-block;
-  margin-top: 0.6rem;
-  padding: 0.7rem 1rem;
-  border: 1px solid var(--research-accent);
-  border-radius: 999px;
-  background: var(--research-accent-soft);
-}
-
-.publication-list {
-  display: grid;
-  gap: 1.25rem;
-}
-
-.publication-item {
-  display: grid;
-  grid-template-columns: minmax(160px, 0.28fr) minmax(0, 0.72fr);
-  gap: 1.25rem;
-  align-items: start;
-  background: var(--research-bg);
-  border: 1px solid var(--research-line);
-  border-radius: 18px;
-  padding: 1rem;
-  box-shadow: 0 8px 22px rgba(31, 41, 51, 0.05);
-}
-
-.publication-snapshot {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 12px;
-  background: var(--research-accent-soft);
-  border: 1px solid var(--research-line);
-}
-
-.publication-detail h3 {
-  font-size: 1.12rem;
-  margin: 0 0 0.35rem;
-  color: var(--research-ink);
-}
-
-.publication-meta {
-  color: var(--research-muted);
-  font-size: 0.95rem;
-  line-height: 1.55;
-  margin-bottom: 0.65rem;
-}
-
-.publication-description {
-  color: var(--research-ink);
-  line-height: 1.65;
-  margin-bottom: 0.75rem;
-}
-
-@media (max-width: 720px) {
-  .research-title {
-    font-size: clamp(2.2rem, 12vw, 3.2rem);
-  }
-
-  .publication-item {
-    grid-template-columns: 1fr;
-  }
-
-  .publication-snapshot {
-    max-width: 420px;
-  }
-}
-</style>
-
-
 <div class="research-subpage">
 
 <section class="research-subpage-intro">
   <div class="research-kicker">Generative AI · Feedback · Adaptation</div>
   <h2 class="research-title anchored">Information dynamics in human–AI systems</h2>
   <div class="research-lede">
-    <p>How does information evolve when humans and AI systems participate in feedback loops?</p>
+    <h3 class="anchored"><i>How does information evolve when humans and AI systems participate in feedback loops?</i></h3>
   </div>
 </section>
 
@@ -309,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
 <section class="research-subpage-section">
   <h2 class="research-section-title anchored">Overview</h2>
   <p>
-    This research theme examines how information evolves when humans and AI systems participate in feedback loops. I am interested in generative AI not only as a technical artefact, but as a latent field shaping cultural, organisational, and epistemic dynamics.
+    This research theme examines how information evolves when humans and AI systems communicate and interact with each other. I am interested in generative AI not only as a technical artefact, but as a latent field shaping cultural, organisational, and epistemic dynamics.
   </p>
   <p>
     Cybernetics offers a practical language for studying these systems: communication, feedback, adaptation, observation, and recursive change.
@@ -320,47 +175,64 @@ ul.task-list li input[type="checkbox"] {
 
 <section class="research-band">
   <div class="research-subpage-section">
-    <h2 class="research-section-title anchored">Selected publications</h2>
+    <h2 class="research-section-title anchored">Relevant publications</h2>
     <p class="research-muted">
-      This list is intended for publications connected to human–AI interaction, generative AI, communication, feedback, adaptation, and information dynamics. Replace each placeholder with a relevant publication for this research theme.
+      This list is intended for publications connected to human–AI interaction, generative AI, communication, feedback, adaptation, and information dynamics.
     </p>
 
     <div class="publication-list">
-      <article class="publication-item">
-        <img class="publication-snapshot" src="../images/publications/information-dynamics-paper-01.jpg" alt="Snapshot image for a publication related to this research theme">
+    
+      <article class="publication-item" style="--publication-border: none; --publication-border-radius: none; --publication-background: none;">
+        <a class="publication-snapshot-link" href="https://doi.org/10.1109/SMC58881.2025.11342470">
+            <img class="publication-snapshot" src="../images/publications/ieee_smc.jpg" alt="Snapshot image for IEEE SMC 2025">
+        </a>
         <div class="publication-detail">
-          <h3 class="anchored">Publication title placeholder</h3>
+          <h3 class="anchored">Semantic topologies in the recursive application of generative AI models</h3>
           <div class="publication-meta">
-            <strong>Authors:</strong> Author One, Author Two, Sungyeon Hong<br>
-            <strong>Year:</strong> 20XX<br>
-            <strong>Publisher / venue:</strong> Journal or conference name
+            <strong>Authors:</strong> Ben Swift, <u>Sungyeon Hong</u><br>
+            <strong>Year:</strong> 2026<br>
+            <strong>Conference:</strong> 2025 IEEE International Conference on Systems, Man, and Cybernetics (SMC)
           </div>
           <p class="publication-description">
-            Add a brief description of the paper here. Focus on the core question, method, system studied, and how the work contributes to this research theme.
+            [Add a brief description]
           </p>
-          <div class="publication-links">
-            <a href="https://doi.org/xx.xxxx/example-doi">DOI link →</a>
-          </div>
         </div>
       </article>
 
-      <article class="publication-item">
-        <img class="publication-snapshot" src="../images/publications/information-dynamics-paper-02.jpg" alt="Snapshot image for another publication related to this research theme">
+      <article class="publication-item" style="--publication-border: none; --publication-border-radius: none; --publication-background: none;">
+            <a class="publication-snapshot-link" href="https://doi.org/10.1145/3716553.3750749">
+                        <img class="publication-snapshot" src="../images/publications/acm_digital_lib.png" alt="Snapshot image for ICMI 2025">
+                </a>
         <div class="publication-detail">
-          <h3 class="anchored">Publication title placeholder</h3>
+          <h3 class="anchored">A scenario-based design pack for exploring multimodal human–GenAI relations</h3>
           <div class="publication-meta">
-            <strong>Authors:</strong> Author One, Author Two, Sungyeon Hong<br>
-            <strong>Year:</strong> 20XX<br>
-            <strong>Publisher / venue:</strong> Journal or conference name
+            <strong>Authors:</strong> Josh Andres, Chris Danta, Andrea Bianchi, Sahar Farzanfar, Gloria Milena Fernandez-Nieto, Alexa Becker, Tara Capel, Frances Liddell, Shelby Hagemann, Ned Cooper, <u>Sungyeon Hong</u>, Li Lin, Eduardo Benitez Sandoval, Anna Brynskov, Hubert Dariusz Zając, Zhuying Li, Tianyi Zhang, Arngeir Berge<br>
+            <strong>Year:</strong> 2025<br>
+            <strong>Publisher:</strong> Proceedings of the 27th International Conference on Multimodal Interaction
           </div>
           <p class="publication-description">
-            Add a short, reader-friendly summary that explains why this publication matters and how it connects to the larger research agenda.
+            [Add a brief description]
           </p>
-          <div class="publication-links">
-            <a href="https://doi.org/xx.xxxx/example-doi">DOI link →</a>
-          </div>
         </div>
       </article>
+      
+      <article class="publication-item" style="--publication-border: none; --publication-border-radius: none; --publication-background: none;">
+        <a class="publication-snapshot-link" href="https://doi.org/10.1145/3656156.3658403">
+            <img class="publication-snapshot" src="../images/publications/dis.png" alt="Snapshot image for DIS 2024">
+        </a>
+        <div class="publication-detail">
+          <h3 class="anchored">Understanding and Shaping Human-Technology Assemblages in the Age of Generative AI</h3>
+          <div class="publication-meta">
+            <strong>Authors:</strong> Josh Andres, Chris Danta, Andrea Bianchi, <u>Sungyeon Hong</u>, Zhuying Li, Eduardo Benitez Sandoval, Charles Patrick Martin, Ned Cooper<br>
+            <strong>Year:</strong> 2024<br>
+            <strong>Conference:</strong> 2024 ACM Designing Interactive Systems Conference
+          </div>
+          <p class="publication-description">
+            [Add a brief description]
+          </p>
+        </div>
+      </article>
+      
     </div>
   </div>
 </section>

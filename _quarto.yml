@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: ./docs  # rendered html pages will be stored here
   resources:
-    - interactive_lloyd/lloyd_demo_app.html
+    - interactive/**
 
 website:
   title: "Sungyeon Hong"
@@ -16,12 +16,14 @@ website:
             href: research/hyperuniformity.qmd
           - text: Information dynamics in human–AI systems
             href: research/information-dynamics.qmd
-          - text: Structural diagnostics for knowledge integrity
-            href: research/knowledge-integrity.qmd
+#          - text: Structural diagnostics for knowledge integrity
+#            href: research/knowledge-integrity.qmd
       - text: Education
         href: education.qmd
       - text: Engagements
         href: engagements.qmd
+      - text: Resources
+        href: resources.qmd
       - text: FAQ
         href: faq.qmd
       - text: Contact

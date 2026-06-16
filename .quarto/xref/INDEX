@@ -64,5 +64,14 @@
   },
   "faq_rendering-issue.qmd": {
     "faq_rendering-issue.html": "7e31e2a7"
+  },
+  "resources.qmd": {
+    "resources.html": "e755e433"
+  },
+  "interactive/lloyd/index.qmd": {
+    "index.html": "3051a4c5"
+  },
+  "interactive/persistence/index.qmd": {
+    "index.html": "6e873827"
   }
 }
