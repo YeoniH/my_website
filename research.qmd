@@ -126,14 +126,17 @@ format:
   <div class="research-kicker">Complexity · Information · Topology</div>
   <h2>Research</h2>
   <div class="research-lede">
+  	<p class="research-muted">
+  		We are living in a vast ocean of data. As cognitive beings, we continually seek to derive meaning from the information we encounter — identifying patterns, forming abstractions, and constructing narratives that help us navigate an increasingly complex world.
+  	</p>
     <p>
       My research investigates how global patterns, behaviours, and meanings emerge from local interactions in complex systems. Beginning with my PhD work on geometry-driven hyperuniformity, I became interested in how simple generative rules can produce striking forms of collective order.
     </p>
     <p>
-      My current work extends this perspective to information systems, especially those mediated by generative AI, where feedback, adaptation, and communication shape how knowledge circulates and evolves.
+      My current work extends this perspective to information systems, especially those mediated by generative AI, where feedback, adaptation, and communication shape how knowledge is created, circulated, and transformed.
     </p>
-    <p class="research-muted">
-      Across these domains, topology provides a unifying lens: a way to identify structural signatures in high-dimensional systems and to develop diagnostics for robustness, information flow, and knowledge integrity.
+    <p>
+      Across these domains, topology provides a unifying lens: a way of characterising structure beyond individual components, revealing the organisational signatures that govern robustness, information flow, and knowledge integrity.
     </p>
   </div>
 </section>
@@ -160,6 +163,7 @@ format:
         </div>
       </article>
 
+<!--
       <article class="research-card">
         <img src="images/research-knowledge-integrity-placeholder.jpg" alt="Placeholder image for knowledge integrity and structural diagnostics">
         <div class="research-card-body">
@@ -168,8 +172,27 @@ format:
           <a href="research/knowledge-integrity.html">Read more →</a>
         </div>
       </article>
+-->
     </div>
   </div>
+</section>
+
+
+
+<section class="research-intro">
+	<h3 class="research-section-title">Research methodologies</h3>
+  <div class="research-lede">
+		<p>
+			One of the central challenges in studying complex systems is that their most important structures are often hidden within high-dimensional data. Rather than focusing on individual observations, topological data analysis (TDA) seeks to understand the shape of data, i.e., the patterns of connectivity, clusters, loops, and higher-dimensional relationships that persist across scales.
+		</p>
+		<p>
+			A key tool in TDA is persistent homology, which tracks how these topological features appear and disappear as we progressively change our notion of proximity. Features that persist across many scales are often indicative of meaningful structure, while short-lived features may correspond to noise.
+		</p>
+		<p>
+		The interactive demonstration below illustrates this process by growing balls around a collection of points and computing the resulting persistent homology, allowing you to explore how topological signatures emerge from seemingly simple data.
+		</p>
+		<a class="demo-button" href="/interactive/persistence/">Launch interactive demo →</a>
+	</div>
 </section>
 
 </div>

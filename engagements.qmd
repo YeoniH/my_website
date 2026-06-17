@@ -4,91 +4,24 @@ page-layout: full
 format:
   html:
     toc: false
-listing:
-  - id: future-activities
-    contents: engagements/future/*.qmd
-    type: grid
-    categories: true
-    sort: "date asc"
-    fields: [image, date, title, description, categories]
-    page-size: 12
-  - id: past-activities
-    contents: engagements/past/*.qmd
-    type: grid
-    categories: true
-    sort: "date desc"
-    fields: [image, date, title, description, categories]
-    page-size: 12
+#listing:
+#  - id: future-activities
+#    contents: engagements/future/*.qmd
+#    type: grid
+#    categories: true
+#    sort: "date asc"
+#    fields: [image, date, title, description, categories]
+#    page-size: 12
+#  - id: past-activities
+#    contents: engagements/past/*.qmd
+#    type: grid
+#    categories: true
+#    sort: "date desc"
+#    fields: [image, date, title, description, categories]
+#    page-size: 12
 ---
 
 ```{=html}
-<style>
-.site-page {
-  --site-accent: #426b73;
-  --site-accent-soft: #e7f0f1;
-  --site-ink: #1f2933;
-  --site-muted: #5f6f7a;
-  --site-line: #d7e1e4;
-  --site-bg: #ffffff;
-}
-
-.site-intro,
-.site-section {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 3.5rem 1.5rem;
-}
-
-.site-intro {
-  padding-top: 2rem;
-  padding-bottom: 2.5rem;
-}
-
-.site-kicker {
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.78rem;
-  color: var(--site-accent);
-  font-weight: 700;
-  margin-bottom: 0.9rem;
-}
-
-.site-intro h2 {
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  line-height: 1;
-  margin: 0 0 1.2rem;
-  color: var(--site-ink);
-}
-
-.site-lede {
-  max-width: 900px;
-  font-size: 1.12rem;
-  line-height: 1.75;
-  color: var(--site-ink);
-}
-
-.site-muted {
-  color: var(--site-muted);
-}
-
-.site-band {
-  background: #f7fafb;
-  border-top: 1px solid var(--site-line);
-  border-bottom: 1px solid var(--site-line);
-}
-
-.site-section-title {
-  font-size: clamp(1.6rem, 3vw, 2.3rem);
-  margin: 0 0 1.2rem;
-  color: var(--site-ink);
-}
-
-.site-section p,
-.site-section li {
-  line-height: 1.65;
-}
-</style>
-
 
 <div class="site-page">
 
@@ -97,22 +30,20 @@ listing:
   <h2>Engagements</h2>
   <div class="site-lede">
     <p>Selected talks, workshops, panels, podcasts, public programs, and other events where I share, test, and develop ideas with wider communities.</p>
-    <p><span class="site-muted">This page is organised as a living archive of future and past engagements.</span></p>
+    <p><span class="site-muted">This page is under construction.</span></p>
   </div>
 </section>
+
+
+<!--
 <section class="site-section">
-  <p>This page collects talks, workshops, panels, podcasts, public programs, and other events I have participated in or will participate in.</p>
-
+  <p>This page is collects talks, workshops, panels, podcasts, public programs, and other events I have participated in or will participate in.</p>
   <h2 class="site-section-title">Future activities</h2>
-
   {#future-activities}
-  
-
   <h2 class="site-section-title">Past activities</h2>
-
   {#past-activities}
-  
 </section>
+-->
 
 </div>
 ```

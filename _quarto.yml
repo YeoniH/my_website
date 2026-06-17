@@ -26,8 +26,8 @@ website:
         href: resources.qmd
       - text: FAQ
         href: faq.qmd
-      - text: Contact
-        href: contact.qmd
+#      - text: Contact
+#        href: contact.qmd
 
 format:
   html:

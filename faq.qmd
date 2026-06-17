@@ -8,125 +8,7 @@ format:
 ---
 
 ```{=html}
-<style>
-.site-page {
-  --site-accent: #426b73;
-  --site-accent-soft: #e7f0f1;
-  --site-ink: #1f2933;
-  --site-muted: #5f6f7a;
-  --site-line: #d7e1e4;
-  --site-bg: #ffffff;
-}
 
-.site-intro,
-.site-section {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 3.5rem 1.5rem;
-}
-
-.site-intro {
-  padding-top: 2rem;
-  padding-bottom: 2.5rem;
-}
-
-.site-kicker {
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.78rem;
-  color: var(--site-accent);
-  font-weight: 700;
-  margin-bottom: 0.9rem;
-}
-
-.site-intro h2 {
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  line-height: 1;
-  margin: 0 0 1.2rem;
-  color: var(--site-ink);
-}
-
-.site-lede {
-  max-width: 900px;
-  font-size: 1.12rem;
-  line-height: 1.75;
-  color: var(--site-ink);
-}
-
-.site-muted {
-  color: var(--site-muted);
-}
-
-.faq-section {
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 1.5rem 1.5rem 3rem 1.5rem;
-}
-
-details.faq-item {
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  background: #ffffff;
-  margin: 0.75rem 0;
-  padding: 0.95rem 1.1rem;
-  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
-}
-
-details.faq-item[open] {
-  border-color: #cbd5e1;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.07);
-}
-
-details.faq-item summary {
-  cursor: pointer;
-  font-weight: 650;
-  color: #111827;
-  list-style: none;
-}
-
-details.faq-item summary::-webkit-details-marker {
-  display: none;
-}
-
-details.faq-item summary::after {
-  content: "+";
-  float: right;
-  font-weight: 500;
-  color: #64748b;
-}
-
-details.faq-item[open] summary::after {
-  content: "−";
-}
-
-.faq-answer {
-  margin-top: 0.85rem;
-  color: #374151;
-  line-height: 1.65;
-}
-
-
-.faq-section-title {
-  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
-  margin: 2.2rem 0 1rem;
-  color: var(--site-ink);
-  font-weight: 750;
-  letter-spacing: -0.02em;
-}
-
-.faq-section-title:first-child {
-  margin-top: 0;
-}
-
-.faq-note {
-  margin-top: 2.5rem;
-  padding: 1rem 1.1rem;
-  border-left: 4px solid #94a3b8;
-  background: #f8fafc;
-  color: #475569;
-  border-radius: 10px;
-}
-</style>
 
 <div class="site-page">
 
@@ -146,7 +28,7 @@ details.faq-item[open] summary::after {
 <summary>What connects your different research interests?</summary>
 <div class="faq-answer">
 
-My work is connected by a shared interest in how global patterns emerge from local interactions. Across geometry-driven pattern formation, human--AI systems, and knowledge integrity, I use topology as a lens for identifying structure, connectivity, flow, and robustness in complex systems.
+My work is connected by a shared interest in how global patterns emerge from local interactions. Across geometry-driven pattern formation, human–AI systems, and knowledge integrity, I use topology as a lens for identifying structure, connectivity, flow, and robustness in complex systems.
 
 </div>
 </details>
@@ -164,7 +46,7 @@ My PhD work on geometry-driven hyperuniformity introduced me to the richness of 
 <summary>What do you mean by studying information dynamics?</summary>
 <div class="faq-answer">
 
-I am interested in how information moves, changes, stabilises, or becomes distorted as it circulates through systems. This includes communication among people, interactions between humans and AI systems, and the evolving structures through which knowledge is produced, interpreted, and trusted.
+I am interested in how information moves, changes, stabilises, or becomes distorted as it circulates through systems. This includes communication among people, interactions between humans and machines, and the evolving structures through which knowledge is produced, interpreted, and trusted.
 
 </div>
 </details>
@@ -192,7 +74,7 @@ I am interested in supervising students whose projects engage with complexity, c
 <summary>Do students need a strong mathematical background to work with you?</summary>
 <div class="faq-answer">
 
-Not always. Some projects require mathematical or computational depth, while others are more conceptual, design-oriented, or interpretive. What matters most is a willingness to work carefully across methods, assumptions, and levels of abstraction.
+Not always. Some projects require mathematical or computational depth, while others are more conceptual, design-oriented, or interpretive. What matters most is a willingness to work carefully across methods, assumptions, and levels of abstraction with an open mind and curiosity.
 
 </div>
 </details>
@@ -220,16 +102,16 @@ I am especially interested in collaborations that bring together complexity scie
 <summary>Are you available for talks, workshops, or public events?</summary>
 <div class="faq-answer">
 
-I am open to invitations that align with my research and teaching interests, particularly around cybernetics, complexity, generative AI, human--AI relations, responsible technology, and topology-informed approaches to understanding systems.
+I am open to invitations that align with my research and teaching interests, particularly around cybernetics, complexity, generative AI, human–AI relations, responsible technology, and topology-informed approaches to understanding systems.
 
 </div>
 </details>
 
 <details class="faq-item">
-<summary>How should people contact you?</summary>
+<summary>How can I contact you?</summary>
 <div class="faq-answer">
 
-The best starting point is the contact information listed on this website. For supervision or collaboration enquiries, it is helpful to include a brief description of the topic, context, and what kind of conversation or outcome you have in mind.
+The best starting point is to write an email to <i>sungyeon[dot]hong[at]anu[dot]edu[dot]au</i>. For supervision or collaboration enquiries, it is helpful to include a brief description of the topic, context, and what kind of conversation or outcome you have in mind.
 
 </div>
 </details>
@@ -239,12 +121,29 @@ The best starting point is the contact information listed on this website. For s
 <summary>How do you pronounce your name?</summary>
 <div class="faq-answer">
 
-Many people find my name difficult to pronounce (it's okay, sometimes I do too!) and often misspell it by adding a mysterious "g" at the end. Here's a simple trick.
-I love singing. The verb "sing" becomes "sang" and then "sung". Say the last one again: That's exactly how the first part of my name sounds.
-The second part is "yeon", which is shorter than "yawn" and lighter than "young". Put them together and you get **Sung-yeon**.
-Don't worry if you don't get it right the first time — I answer to a surprising number of variations.
+	Many people find my name difficult to pronounce (sometimes I do too!) and often misspell it by adding a mysterious "g" at the end. Here's a simple trick.
+	I love singing. The verb "sing" becomes "sang" and then "sung". Say the last one again: That's exactly how the first part of my name sounds!
+	The second part is "yeon", which is shorter than "yawn" and lighter than "young". 
+	Now, put them together and you get **Sung-yeon**. Don't worry if you don't get it right the first time — I respond to a surprising number of variations. :)
 
 </div>
+</details>
+
+<details class="faq-item">
+<summary>What do you do for fun?</summary>
+<div class="faq-answer">
+
+Outside work, I enjoy drawing, cooking (+ eating), gardening, hiking, travelling, playing the violin, watching French comedies, and spending time with my family and doggos.
+
+</details>
+
+
+<details class="faq-item">
+<summary>What languages do you speak?</summary>
+<div class="faq-answer">
+
+My mother tongue is Korean, which I am continually trying to keep up with its ever-evolving modern forms while living abroad. I speak French, can read German, can produce a surprisingly convincing Italian accents (thanks to my Italian/Swiss-Italian amici), and have a patchy understanding of Chinese. Languages fascinate me, as each offers a different way of seeing and describing the world. As an ongoing stretch goal, I am also a keen listener to our fellow doggos and babies, both of whom seem to communicate far more than they are often given credit for.
+
 </details>
 
 

@@ -49,18 +49,16 @@ format:
 					<img class="publication-snapshot" src="../images/publications/data_driven_modelling.jpg" alt="Snapshot image for DDM 2025">
 				</a>
         <div class="publication-detail">
-        	<a class="publication-title-link" href="https://doi.org/10.1142/S3029101125500012">
-        		<h3>Scale-free correlations in two-dimensional geometry-driven hyperuniformity
-        		</h3>
+        	<a class="title-link" href="https://doi.org/10.1142/S3029101125500012">
+        		<h3>Scale-free correlations in two-dimensional geometry-driven hyperuniformity</h3>
         	</a>
-          <a/>
           <div class="publication-meta">
             <strong>Authors:</strong> <u>Sungyeon Hong</u>, Mohammad Saadatfar<br>
             <strong>Year:</strong> 2025<br>
             <strong>Publisher:</strong> Data-Driven Modelling: Unravelling Complexity in the Sea of Data
           </div>
           <p class="publication-description">
-            DESCRIPTION
+            This work investigates how large-scale order can emerge from simple local interactions. Using a computational process known as Lloyd's algorithm, we show that a disordered collection of points can self-organise into a hyperuniform state characterised by orientational domains whose sizes grow with the system itself. The absence of a characteristic length scale suggests a form of scale-free organisation, a hallmark of systems capable of coordinated collective responses across many scales.
           </p>
         </div>
       </article>
@@ -70,7 +68,7 @@ format:
 					<img class="publication-snapshot" src="../images/publications/pnas_nexus.jpeg" alt="Snapshot image for PNAS Nexus 2024">
 				</a>
         <div class="publication-detail">
-        	<a class="publication-title-link" href="https://doi.org/10.1093/pnasnexus/pgae510">
+        	<a class="title-link" href="https://doi.org/10.1093/pnasnexus/pgae510">
           	<h3>Topological mechanical states in geometry-driven hyperuniform materials</h3>
           </a>
           <div class="publication-meta">
@@ -79,24 +77,26 @@ format:
             <strong>Publisher:</strong> PNAS Nexus
           </div>
           <p class="publication-description">
-            DESCRIPTION
+            Can disorder be engineered to produce useful physical behaviour? In this study, we reveal how topological defects that emerge during the formation of hyperuniform structures give rise to distinct mechanical states capable of localising vibrational energy. By connecting geometry, topology, and mechanics, this work demonstrates how robust functional properties can arise from self-organising disordered materials.
           </p>
         </div>
       </article>
       
-      <article class="publication-item" style="--publication-border: none; --publication-border-radius: none;">
+      <article class="publication-item" style="--publication-border: 15px solid #FFFFFF;">
         <a class="publication-snapshot-link" href="https://doi.org/10.1051/epjconf/202124915002">
 					<img class="publication-snapshot" src="../images/publications/powders_and_grains.png" alt="Snapshot image for P&G 2021">
 				</a>
         <div class="publication-detail">
-          <h3>Dynamical arrest of topological defects in 2D hyperuniform disk packings</h3>
+          <a class="title-link" href="https://doi.org/10.1051/epjconf/202124915002">
+          	<h3>Dynamical arrest of topological defects in 2D hyperuniform disk packings</h3>
+          </a>
           <div class="publication-meta">
             <strong>Authors:</strong> <u>Sungyeon Hong</u>, Michael A. Klatt, Gerd Schröder-Turk, Nicolas François, and Mohammad Saadatfar<br>
             <strong>Year:</strong> 2021<br>
             <strong>Conference:</strong> Powders & Grains 2021 – 9th International Conference on Micromechanics on Granular Media
           </div>
           <p class="publication-description">
-            DESCRIPTION
+            This paper explores how topological defects evolve during the formation of hyperuniform structures. We show that as the system becomes increasingly ordered, defects slow down and eventually become trapped, leaving a characteristic structural signature. The results provide insight into how local topological processes shape the emergence of large-scale order in complex systems.
           </p>
         </div>
       </article>
