@@ -40,6 +40,26 @@
   }
 }
 
+/* Global hyperlinks */
+:root {
+  --bs-primary: #426b73;
+  --site-accent: #426b73;
+  --site-accent-dark: #2f5158;
+}
+
+a {
+  color: var(--site-accent);
+}
+
+a:hover {
+  color: var(--site-accent-dark);
+}
+
+a:visited {
+  color: var(--site-accent);
+}
+
+
 /* Homepage-specific styling */
 .homepage {
   --home-accent: #426b73;
