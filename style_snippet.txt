@@ -1,0 +1,120 @@
+
+<style>
+.research-subpage {
+  --research-accent: #426b73;
+  --research-accent-soft: #e7f0f1;
+  --research-ink: #1f2933;
+  --research-muted: #5f6f7a;
+  --research-line: #d7e1e4;
+  --research-bg: #ffffff;
+}
+
+.research-subpage-intro,
+.research-subpage-section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem;
+}
+
+.research-subpage-intro {
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+}
+
+.research-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: var(--research-accent);
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.research-title {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 0.98;
+  margin: 0 0 1.15rem;
+  color: var(--research-ink);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.research-lede {
+  max-width: 900px;
+  font-size: 1.12rem;
+  line-height: 1.75;
+  color: var(--research-ink);
+}
+
+.research-muted {
+  color: var(--research-muted);
+}
+
+.research-band {
+  background: #f7fafb;
+  border-top: 1px solid var(--research-line);
+  border-bottom: 1px solid var(--research-line);
+}
+
+.research-section-title {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  margin: 0 0 1.2rem;
+  color: var(--research-ink);
+}
+
+.research-subpage-section p,
+.research-subpage-section li {
+  line-height: 1.65;
+}
+
+.demo-button,
+.publication-links a {
+  font-weight: 650;
+  text-decoration: none;
+  color: var(--research-accent);
+}
+
+.demo-button {
+  display: inline-block;
+  margin-top: 0.6rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--research-accent);
+  border-radius: 999px;
+  background: var(--research-accent-soft);
+}
+
+
+
+
+.publication-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.publication-meta {
+  color: var(--research-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin-bottom: 0.65rem;
+}
+
+.publication-description {
+  color: var(--research-ink);
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 720px) {
+  .research-title {
+    font-size: clamp(2.2rem, 12vw, 3.2rem);
+  }
+
+  .publication-item {
+    grid-template-columns: 1fr;
+  }
+
+  .publication-snapshot {
+    max-width: 420px;
+  }
+}
+</style>
