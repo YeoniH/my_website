@@ -297,8 +297,8 @@
     <div>
       <h1>Persistent homology from growing balls</h1>
       <div class="subtitle">
-        A browser-scale demonstrator for computing persistent homology of a 2D point pattern through growing balls.
-        Choose between Čech and Vietoris--Rips filtrations, grow the scale parameter <em>r</em>, and watch the corresponding persistence diagram update on the right.
+        This is a demonstration of computing persistent homology of a 2D point pattern through growing balls.
+        Choose between Čech and Vietoris-Rips filtrations, grow the scale parameter <em>r</em>, and watch the corresponding persistence diagram update on the right.
       </div>
     </div>
   </header>
@@ -333,11 +333,11 @@
     <div class="control">
       <label for="filtrationType">
         Filtration type
-        <span class="info-dot" title="Čech uses the true common-intersection radius for triples of balls, so it matches the union-of-balls nerve. Vietoris--Rips fills a triangle as soon as all three pairwise balls overlap, so it is often easier to compute but can fill loops earlier.">?</span>
+        <span class="info-dot" title="Čech uses the true common-intersection radius for triples of balls, so it matches the union-of-balls nerve. Vietoris-Rips fills a triangle as soon as all three pairwise balls overlap, so it is often easier to compute but can fill loops earlier.">?</span>
       </label>
       <select id="filtrationType">
         <option value="cech" selected>Čech filtration</option>
-        <option value="rips">Vietoris--Rips filtration</option>
+        <option value="rips">Vietoris-Rips filtration</option>
       </select>
     </div>
 
@@ -370,7 +370,7 @@
 
   <section class="status" aria-label="status">
     <div class="stat">
-      <b>radius r <span class="info-dot" title="The current scale parameter. On the left, each point has a ball of radius r; on the right, dashed guide lines show the same value in the persistence diagram.">?</span></b>
+      <b>radius <i>r</i> <span class="info-dot" title="The current scale parameter. On the left, each point has a ball of radius r; on the right, dashed guide lines show the same value in the persistence diagram.">?</span></b>
       <span id="statR">0.000</span>
     </div>
     <div class="stat">
@@ -413,7 +413,7 @@
     <div class="slider-row">
       <div>
         <label for="radiusSlider">
-          Scale parameter r
+          Scale parameter <i>r</i>
           <span class="info-dot" title="Drag the slider to grow the balls. Edges appear when balls intersect; triangles appear according to the selected filtration. The diagram updates to show active features at this scale.">?</span>
         </label>
         <input id="radiusSlider" type="range" min="0" max="0.5" step="0.002" value="0">
@@ -424,7 +424,7 @@
       </div>
     </div>
     <div class="note" id="filtrationNote">
-      Computational note: Čech and Vietoris--Rips have the same edge birth time in this radius convention, but differ for triangles. Čech uses the smallest ball radius for a true triple intersection; Vietoris--Rips fills a triangle once all three pairwise overlaps exist.
+      Computational note: Čech and Vietoris-Rips have the same edge birth time in this radius convention, but differ for triangles. Čech uses the smallest ball radius for a true triple intersection, while Vietoris-Rips fills a triangle once all three pairwise overlaps exist.
     </div>
   </section>
 </div>
