@@ -1,0 +1,83 @@
+---
+pagetitle: "RESEARCH_THEME_TITLE"
+page-layout: full
+format:
+  html:
+    toc: false
+---
+
+```{=html}
+
+
+<div class="research-subpage">
+
+<section class="research-subpage-intro">
+  <div class="research-kicker">KEYWORD1 · KEYWORD2 · KEYWORD3</div>
+  <h2 class="research-title">RESEARCH_THEME_TITLE</h2>
+  <div class="research-lede">
+    <h3><i>CENTRAL_QUESTION</i></h3>
+  </div>
+</section>
+
+
+<section class="research-subpage-section">
+  <h2 class="research-section-title">Overview</h2>
+  <p>
+    This research theme is ...
+  </p>
+
+/*
+  <h2 class="research-section-title">Interactive demo</h2>
+  <p>
+    The interactive [NAME] demo is ...
+  </p>
+  <a class="demo-button" href="../interactive/lloyd/">Launch interactive demo →</a>
+*/
+</section>
+
+
+
+<section class="research-band">
+  <div class="research-subpage-section">
+    <h2 class="research-section-title">Relevant publications</h2>
+    <p class="research-muted">
+      This list is intended for publications connected to ...
+    </p>
+
+    <div class="publication-list">
+    
+    /* ADD MORE <article class="publication-item"> */
+    
+      <article class="publication-item">
+        <a class="publication-snapshot-link" href="REPLACE_WITH_DOI">
+					<img class="publication-snapshot" src="../images/publications/IMAGE_FILE" alt="Snapshot image for ...">
+				</a>
+        <div class="publication-detail">
+        	<a class="title-link" href="REPLACE_WITH_DOI">
+          	<h3>PUBLICATION TITLE</h3>
+          </a>
+          <div class="publication-meta">
+            <strong>Authors:</strong> <u>Sungyeon Hong</u><br>
+            <strong>Year:</strong> 202X<br>
+            <strong>Publisher:</strong> PUBLISHER_NAME
+          </div>
+          <p class="publication-description">
+            DESCRIPTION
+          </p>
+          /* IF NEEDED
+          <div class="publication-links">
+            <a href="REPLACE_WITH_DOI">DOI link →</a>
+          </div>
+          */
+        </div>
+      </article>
+
+      
+    </div>
+  </div>
+</section>
+
+
+</div>
+
+```
